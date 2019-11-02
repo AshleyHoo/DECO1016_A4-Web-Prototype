@@ -1,5 +1,5 @@
 (function() {
-  var Router = function() {
+  let Router = function() {
     this.routes = {}; // save router
     this.curUrl = ""; // get current hashRouter
   };
@@ -21,34 +21,76 @@
   window.oRou = Router;
 })();
 
-var MyRouter = new oRou();
+let MyRouter = new oRou();
 MyRouter.init();
+
+//get all pages div
+let pages = document.querySelectorAll("sidebar>div");
+console.log(pages)
+
 MyRouter.map("/", function() {
-  var sidebarText = document.querySelector("sidebar");
-  sidebarText.innerHTML = "Index";
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".index_page");
+  page.style.display = "block"
+});
+MyRouter.map("/SIGN_IN_UP", function() {
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".sign_in_sign_up");
+  page.style.display = "block"
+});
+
+MyRouter.map("/SIGN_UP", function() {
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".sign_up");
+  page.style.display = "block"
 });
 
 MyRouter.map("/about", function() {
-  var sidebarText = document.querySelector("sidebar");
-  sidebarText.innerHTML = "About US";
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".about_us");
+  page.style.display = "block"
 });
 
 MyRouter.map("/program", function() {
-  var sidebarText = document.querySelector("sidebar");
-  sidebarText.innerHTML = "Personal Training Program";
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".personal_trainong_program");
+  page.style.display = "block"
+
 });
 
 MyRouter.map("/history", function() {
-  var sidebarText = document.querySelector("sidebar");
-  sidebarText.innerHTML = "Reward History";
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".reward_history");
+  page.style.display = "block"
+
 });
 
 MyRouter.map("/community", function() {
-  var sidebarText = document.querySelector("sidebar");
-  sidebarText.innerHTML = "Community";
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".community");
+  page.style.display = "block"
+
 });
 
 MyRouter.map("/contact", function() {
-  var sidebarText = document.querySelector("sidebar");
-  sidebarText.innerHTML = "Contact";
+  pages.forEach((item) => {
+    item.style.display = "none"
+  })
+  let page = document.querySelector(".contact");
+  page.style.display = "block"
+
 });
