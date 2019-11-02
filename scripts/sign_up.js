@@ -1,3 +1,7 @@
+function clickSign(){
+    location.hash = "#/SIGN_UP"
+}
+
 function checkSigUp(object) {
     location.hash = "#/SIGN_UP"
     changeSignUpPages(".sign_up_billing_detial")
