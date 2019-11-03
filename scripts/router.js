@@ -40,7 +40,7 @@ MyRouter.map("/SIGN_IN_UP", function() {
     item.style.display = "none"
   })
   let page = document.querySelector(".sign_in_sign_up");
-  page.style.display = "block"
+  page.style.display = "flex"
 });
 
 MyRouter.map("/SIGN_UP", function() {
@@ -48,7 +48,7 @@ MyRouter.map("/SIGN_UP", function() {
     item.style.display = "none"
   })
   let page = document.querySelector(".sign_up");
-  page.style.display = "block"
+  page.style.display = "flex"
 });
 
 MyRouter.map("/about", function() {

@@ -10,17 +10,6 @@
 </head>
 
 <body>
-    <header style="display: none;">
-        <div>
-            <div><img src='./images/Icon search.png' /></div>
-            <div class="index_logo">
-                <img src='./images/logo.png' />
-            </div>
-            <p>LOGN IN</p>
-        </div>
-        <img src='./images/Icon search.png' />
-        <img src='./images/Icon heart.png' />
-    </header>
     <!-- Left navigation bar -->
     <div class="content_wrapper">
         <section class="section_left">
@@ -143,284 +132,386 @@
             <div class="community" style="display: none;">Community</div>
             <div class="contact" style="display: none;">Contact</div>
             <div class="sign_in_sign_up" style="display: none;">
-                <h2 class="sign_page_title">SIGN IN / SIGN UP</h2>
-                <div class="sign_in">
-                    <p>Ready to start 30 days free trial?</p>
-                    <div>
-                        <p>CURRENT CUSTOMER</p>
+                <div class="">
+                    <h2 class="form_big_title">SIGN IN / SIGN UP</h2>
+                    <p class="form_left_title">Ready to start 30 days free trial?</p>
+                    <div class="form">
                         <div class="sign_in_form">
+                            <p class="form_little_title">CURRENT CUSTOMER</p>
                             <!-- <form onsubmit="return checkSignIn(this)"> -->
                             <form action="#/" method="post" onsubmit="return checkSignIn(this)">
-                                <p>Required Field * </p>
-                                <input type="text" name="email" placeholder="EMAIL ADDRESS*" />
-                                <input type="password" name="password" placeholder="PASSWORD*" />
-                                <p>FORGOT YOUR PASSWORD?</p>
-                                <div>
+                                <p class="require_text">Required Field * </p>
+                                <input class="input_underline" type="text" name="email" placeholder="EMAIL ADDRESS*" />
+                                <input class="input_underline" type="password" name="password"
+                                    placeholder="PASSWORD*" />
+                                <p class="left_little_text">FORGOT YOUR PASSWORD?</p>
+                                <div class="checkbox_text">
                                     <input id="checkbox_remember_me" type="checkbox" value="1" checked="checked" />
                                     <label for="checkbox_remember_me">REMEMBER ME</label>
                                 </div>
-                                <span id="warning_sign_in"></span>
-                                <input type="submit" value="SIGN IN" />
+                                <div class="warn_text" id="warning_sign_in"> </div>
+                                <input class="submit_button" type="submit" style="width: 100px;" value="SIGN IN" />
                             </form>
                         </div>
-                    </div>
-                </div>
-                <div class="sign_up_creat_form">
-                    <p>NEW CUSTOMER</p>
-                    <form action="#/SIGN_UP" method="post" onsubmit="return checkSigUp(this)">
-                        <p>Required Field * </p>
-                        <div>
-                            <span>TITLE *</span>
-                            <div class="container">
-                                <input class="radioTitle" name="title" type="radio" value="MRS." />MRS.
-                                <input class="radioTitle" name="title" type="radio" checked="checked" value="MS." />MS.
-                                <input class="radioTitle" name="title" type="radio" value="MR." />MR.
+                        <div class="sign_up_creat_form">
+                            <p class="form_little_title">NEW CUSTOMER</p>
+                            <div class="form_tag"></div>
+                            <img class="icon_user" src="./images/Icon user.png" />
+                            <form action="#/SIGN_UP" method="post" onsubmit="return checkSigUp(this)">
+                                <p class="require_text">Required Field * </p>
+                                <div class="gender_wrapper">
+                                    <span>TITLE *</span>
+                                    <div>
+                                        <input class="radioTitle" name="title" type="radio" value="MRS." />MRS.</div>
+                                    <div>
+                                        <input class="radioTitle" name="title" type="radio" checked="checked"
+                                            value="MS." />MS.
+                                    </div>
+                                    <div>
+                                        <input class="radioTitle" name="title" type="radio" value="MR." />MR.
+                                    </div>
+                                </div>
+                                <input class="input_underline" style="width: 60%;" type="text" name="username"
+                                    placeholder="USERNAME*" />
+                                <input class="input_underline" type="text" name="email" placeholder="EMAIL ADDRESS*" />
+                                <input class="input_underline" type="password" name="password"
+                                    placeholder="PASSWORD* (must contain letters and numbers)" />
+                                <input class="input_underline" type="password" name="rePassword"
+                                    placeholder="CONFIRM PASSWORD*" />
+                                <p class="little_text">BY REGISTERING YOUR DETAILS YOU AGREE TO OUR <span
+                                        style="color: #c8a985;">TERMS AND CONDITIONS AND PRIVACY AND
+                                        COOKIE
+                                        POLICY
+                                    </span>
+                                </p>
+                                <div class="checkbox_text">
+                                    <input id="checkbox_receive_news" type="checkbox" value="1" checked="checked" />
+                                    <label for="checkbox_receive_news">I WOULD LIKE TO RECEIVE
+                                        SCEND FITNESS LATEST
+                                        NEWS</label>
+                                </div>
+                                <div class="warn_text" id="warning_sign_up"></div>
+                                <input class="submit_button" style="width: 200px;" type="submit"
+                                    value="CREATE MY ACCOUNT" />
+                            </form>
+                            <div class="circle_wrapper">
+                                <div class="circle circleInPage"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
-                        <input type="text" name="username" placeholder="USERNAME*" />
-                        <input type="text" name="email" placeholder="EMAIL ADDRESS*" />
-                        <input type="password" name="password"
-                            placeholder="PASSWORD* (must contain letters and numbers)" />
-                        <input type="password" name="rePassword" placeholder="CONFIRM PASSWORD*" />
-                        <p>BY REGISTERING YOUR DETAILS YOU AGREE TO OUR TERMS AND CONDITIONS AND PRIVACY AND COOKIE
-                            POLICY
-                        </p>
-                        <div>
-                            <input id="checkbox_receive_news" type="checkbox" value="1" checked="checked" />
-                            <label for="checkbox_receive_news">I WOULD LIKE TO RECEIVE SCEND FITNESS LATEST NEWS</label>
-                        </div>
-                        <span id="warning_sign_up"></span>
-                        <input type="submit" value="CREATE MY ACCOUNT" />
-                    </form>
-                    <div class="circle_wrapper">
-                        <div class="circle circleInPage"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
                     </div>
                 </div>
             </div>
             <div class="sign_up" style="display: none;">
                 <div class="sign_up_billing_detial" style="display: none;">
-                    <h2 class="sign_page_title">SIGN UP</h2>
-                    <div class="sign_up_billing_detials_wrapper">
-                        <p>Let’s start your free 30 days! </p>
-                        <div>
-                            <p>NEW CUSTOMER</p>
-                            <p>Credit Card</p>
-                            <div class="sign_up_billing_detials_form">
-                                <form method="post" onsubmit="return checkBillingDetail(this)">
-                                    <p>Required Field * </p>
+                    <h2 class="form_big_title">SIGN UP</h2>
+                    <p class="form_left_title">Let’s start your free 30 days! </p>
+                    <div class="form_wrapper">
+                        <div class="form_tag"></div>
+                        <img class="icon_user" src="./images/Icon user.png" />
+                        <p class="form_little_title">NEW CUSTOMER</p>
+                        <div class="form_under_little_title">
+                            <img src="./images/down.png" />
+                            <span>Credit Card</span>
+                            <img src="./images/card.png" />
+                        </div>
+                        <div class="sign_up_billing_detials_form">
+                            <form method="post" onsubmit="return checkBillingDetail(this)">
+                                <p class="require_text">Required Field * </p>
+                                <div class="input_box_wrapper">
+                                    <label class="input_title" for="firstName">FIRST NAME*</label>
+                                    <input class="input_box" style="width: 200px;" type="text" name="firstName"
+                                        id="firstName" />
+                                    <span class="input_tips">Must match your card</span>
+                                </div>
+                                <div class="input_box_wrapper">
+                                    <label class="input_title" for="lastName">LAST NAME*</label>
+                                    <input class="input_box" style="width: 200px;" type="text" name="lastName"
+                                        id="lastName" />
+                                    <span class="input_tips">Must match your card</span>
+                                </div>
+                                <div class="input_box_wrapper input_box_wrapper_inline">
                                     <div>
-                                        <label for="firstName">FIRST NAME*</label>
-                                        <input type="text" name="firstName" id="firstName" />
-                                        <span>Must match your card</span>
-                                    </div>
-                                    <div>
-                                        <label for="lastName">LAST NAME*</label>
-                                        <input type="text" name="lastName" id="lastName" />
-                                        <span>Must match your card</span>
-                                    </div>
-                                    <div>
-                                        <label for="cardNumber">CARD NUMBER*</label>
-                                        <input type="number" name="cardNumber" id="cardNumber" />
-                                    </div>
-                                    <div>
-                                        <label for="securityCode">Security Code*</label>
-                                        <input type="number" name="securityCode" id="securityCode" />
-                                    </div>
-                                    <div>
-                                        <label for="securityCode">Expiration Date*</label>
-                                        <input type="text" class="datepicker">
-                                    </div>
-                                    <div>
-                                        <input id="checkbox_billing_detials_for" type="checkbox" value="1"
-                                            checked="checked" />
-                                        <label for="checkbox_billing_detials_for">I agree to the Terms of Use and
-                                            Privacy
-                                            Policy.</label>
+                                        <label class="input_title" for="cardNumber">CARD NUMBER*</label>
+                                        <div class="input_img_position">
+                                            <input class="input_box" style="width: 360px;" type="text" name="cardNumber"
+                                                id="cardNumber" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+                                            <img class="input_img" src="./images/lock.png" />
+                                        </div>
 
                                     </div>
-                                    <input type="submit" value="Billing Details" />
-                                </form>
-                                <div class="circle_wrapper">
-                                    <div class="circle"></div>
-                                    <div class="circle circleInPage"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
+                                    <div>
+                                        <label class="input_title" for="securityCode">Security Code*</label>
+                                        <div class="input_img_position">
+                                            <input class="input_box" style="width: 120px;" type="text"
+                                                name="securityCode" id="securityCode" />
+                                            <img class="input_img" src="./images/lock.png" />
+                                        </div>
+
+                                    </div>
                                 </div>
+
+                                <div class="input_box_wrapper">
+                                    <label class="input_title" for="expirationDate">Expiration Date*</label>
+                                    <div class="input_img_position" style="width: 200px;">
+                                        <input class="input_box" style="width: 200px;" type="text" class="datepicker"
+                                            name="expirationDate" id="expirationDate">
+                                        <img class="input_img" src="./images/date.png" />
+                                    </div>
+
+                                </div>
+                                <div class="checkbox_text">
+                                    <input id="checkbox_billing_detials_for" type="checkbox" value="1"
+                                        checked="checked" />
+                                    <label for="checkbox_billing_detials_for">I agree to the Terms of Use and
+                                        Privacy
+                                        Policy.</label>
+
+                                </div>
+                                <div class="green_banner">Free trial starts from today and
+                                    ends on 12/10/19.
+                                    Only $17 per month after the end day.
+                                </div>
+                                <input class="submit_button" style="width: 160px;" type="submit"
+                                    value="Billing Details" />
+                            </form>
+                            <div class="circle_wrapper">
+                                <div class="circle"></div>
+                                <div class="circle circleInPage"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="sign_up_personal_setting" style="display: none;">
-                    <h2 class="sign_page_title">SIGN UP</h2>
-                    <div class="sign_up_ersonal_setting_wrapper">
-                        <p>Let’s start your free 30 days! </p>
-                        <div>
-                            <p>NEW CUSTOMER</p>
-                            <p>Billing Details</p>
-                            <div class="sign_up_ersonal_setting_form">
-                                <form method="POST" onsubmit="return checkPersonalSetting(this)">
-                                    <p>Required Field * </p>
-                                    <div>
-                                        <label for="street">Street*</label>
-                                        <input type="text" name="street" id="street" />
-                                    </div>
-                                    <div>
-                                        <label for="city">City*</label>
-                                        <input type="text" name="city" id="city" />
-                                    </div>
-                                    <div>
-                                        <label for="postalCode">Zip/Postal Code*</label>
-                                        <input type="text" name="postalCode" id="postalCode" />
-                                    </div>
-                                    <div>
-                                        <label for="province">States/Province*</label>
-                                        <input type="text" name="province" id="province" />
-                                    </div>
-                                    <div>
-                                        <label for="country">Country*</label>
-                                        <input type="text" class="country">
-                                    </div>
-                                    <input type="submit" value="Personal Setting" />
-                                </form>
-                                <div class="circle_wrapper">
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle circleInPage"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
+                    <h2 class="form_big_title ">SIGN UP</h2>
+                    <p class="form_left_title">Let’s start your free 30 days! </p>
+                    <div class="form_wrapper">
+                        <div class="form_tag"></div>
+                        <img class="icon_user" src="./images/Icon user.png" />
+                        <p class="form_little_title">NEW CUSTOMER</p>
+                        <div class="form_under_little_title">
+                            <img src="./images/down.png" />
+                            <span>Billing Details</span>
+                        </div>
+                        <div class="sign_up_ersonal_setting_form">
+                            <form method="POST" onsubmit="return checkPersonalSetting(this)">
+                                <p class="require_text">Required Field * </p>
+                                <div class="input_box_wrapper">
+                                    <label class="input_title" for="street">Street*</label>
+                                    <input class="input_box" style="width: 340px;" type="text" name="street"
+                                        id="street" />
                                 </div>
+                                <div class="input_box_wrapper input_box_wrapper_inline">
+                                    <div>
+                                        <label class="input_title" for="city">City*</label>
+                                        <input class="input_box" style="width: 150px;" type="text" name="city"
+                                            id="city" />
+                                    </div>
+                                    <div>
+                                        <label class="input_title" for="postalCode">Zip/Postal Code*</label>
+                                        <input class="input_box" style="width: 150px;" type="text" name="postalCode"
+                                            id="postalCode" />
+                                    </div>
+                                </div>
+                                <div class="input_box_wrapper">
+                                    <label class="input_title" for="province">States/Province*</label>
+                                    <input class="input_box" style="width: 200px;" type="text" name="province"
+                                        id="province" />
+                                </div>
+                                <div class="input_box_wrapper">
+                                    <label class="input_title" for="country">Country*</label>
+                                    <div class="input_img_position" style="width: 160px;">
+                                        <input class="input_box" style="width: 160px;" type="text" class="country">
+                                        <img class="input_img" src="./images/down arrow.png" />
+                                    </div>
+                                </div>
+                                <div class="green_banner">Free trial starts from today and
+                                    ends on 12/10/19.
+                                    Only $17 per month after the end day.
+                                </div>
+                                <input class="submit_button" style="width: 160px;" type="submit"
+                                    value="Personal Setting" />
+                            </form>
+                            <div class="circle_wrapper">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle circleInPage"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="sign_up_preferred_exercise" style="display: none;">
-                    <h2 class="sign_page_title">SIGN UP</h2>
-                    <div class="sign_up_preferred_exercise_wrapper">
-                        <p>Let’s start your free 30 days! </p>
-                        <div>
-                            <p>NEW CUSTOMER</p>
-                            <p>Personal Setting</p>
-                            <div class="sign_up_preferred_exercise_form">
-                                <form method="POST" onsubmit="return checkPreferredExercise(this)">
-                                    <div>
-                                        <span>Your Height:</span>
-                                        <img src="./images/height.png" />
-                                    </div>
-                                    <div>
+                    <h2 class="form_big_title">SIGN UP</h2>
+                    <p class="form_left_title">Let’s start your free 30 days! </p>
+                    <div class="form_wrapper">
+                        <div class="form_tag"></div>
+                        <img class="icon_user" src="./images/Icon user.png" />
+                        <p class="form_little_title">NEW CUSTOMER</p>
+                        <div class="form_under_little_title">
+                            <img src="./images/down.png" />
+                            <span>Personal Setting</span>
+                        </div>
+                        <div class="sign_up_preferred_exercise_form">
+                            <form method="POST" onsubmit="return checkPreferredExercise(this)">
+                                <div class="height_weight_wrapper">
+                                    <span>Your Height:</span>
+                                    <img src="./images/height.png" />
+                                </div>
+                                <div class="current_goal_weight">
+                                    <div class="height_weight_wrapper">
                                         <span>Your Current weight:</span>
                                         <img src="./images/currentWeight.png" />
                                     </div>
-                                    <div>
+                                    <div class="height_weight_wrapper">
                                         <span>Goal Weight:</span>
                                         <img src="./images/goalWeight.png" />
                                     </div>
-                                    <div>
-                                        <span>167cm / 58kg</span>
-                                        <div>
-                                            <span>need to lose:</span>
-                                            <span>8 kg</span>
-                                        </div>
-                                    </div>
-                                    <input type="submit" value="Preferred Body Parts for Exercise" />
-                                </form>
-                                <div class="circle_wrapper">
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle circleInPage"></div>
-                                    <div class="circle"></div>
                                 </div>
+                                <div class="height_weight_wrapper">
+                                    <div class="goal_bg" style="width: 150px;">167cm / 58kg</div>
+                                    <div>need to lose:</div>
+                                    <div class="goal_bg" style="width: 100px;">8 kg</div>
+                                </div>
+                                <div class="green_banner">Free trial starts from today and
+                                    ends on 12/10/19.
+                                    Only $17 per month after the end day.
+                                </div>
+                                <input class="submit_button" style="width: 300px;" type="submit"
+                                    value="Preferred Body Parts for Exercise" />
+                            </form>
+                            <div class="circle_wrapper">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle circleInPage"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="sign_up_done" style="display: none;">
-                    <h2 class="sign_page_title">SIGN UP</h2>
-                    <div class="sign_up_done_wrapper">
-                        <p>Let’s start your free 30 days! </p>
-                        <div>
-                            <p>NEW CUSTOMER</p>
-                            <p>Preferred Body Parts for Exercise</p>
-                            <div class="sign_up_done_form">
-                                <form method="POST" onsubmit="return checkDone(this)">
-                                    <div>
-                                        <img src="./images/human.png" />
+                    <h2 class="form_big_title">SIGN UP</h2>
+                    <p class="form_left_title">Let’s start your free 30 days! </p>
+                    <div class="form_wrapper">
+                        <div class="form_tag"></div>
+                        <img class="icon_user" src="./images/Icon user.png" />
+                        <p class="form_little_title">NEW CUSTOMER</p>
+                        <div class="form_under_little_title">
+                            <img src="./images/down.png" />
+                            <span>Preferred Body Parts for Exercised</span>
+                        </div>
+                        <div class="sign_up_done_form">
+                            <form method="POST" onsubmit="return checkDone(this)">
+                                <div class="human_wrapper">
+                                    <img src="./images/human.png" />
+                                    <div class="complexion_box">
+                                        <div class="complexion_box_column">
+                                            <span class="item">BACK</span>
+                                            <span class="item">ARM</span>
+                                        </div>
+                                        <div class="complexion_box_column">
+                                            <span class="item">HIP</span>
+                                            <span class="item">WAIST</span>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <span>BACK</span>
-                                        <span>ARM</span>
-                                        <span>HIP</span>
-                                        <span>WAIST</span>
-                                    </div>
-                                    <input type="submit" value="All Done!" />
-                                </form>
-                                <div class="circle_wrapper">
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle"></div>
-                                    <div class="circle circleInPage"></div>
                                 </div>
+                                <div class="green_banner">Free trial starts from today and
+                                    ends on 12/10/19.
+                                    Only $17 per month after the end day.
+                                </div>
+                                <input class="submit_button" style="width: 100px;" type="submit" value="All Done!" />
+                            </form>
+                            <div class="circle_wrapper">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle circleInPage"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="choose_interest" style="display: none;">
-                    <h2 class="sign_page_title">WELCOME TO JOIN US!</h2>
-                    <div class="sign_up_done_wrapper">
-                        <p>Free Trial Begin Enjoy Your Journey with Us</p>
-                        <div>
-                            <div>Choose Physical Activity Fields You Are Interested In</div>
-                            <form method="POST" onsubmit="return checkInterest(this)">
-                                <div>
-                                    <img src="./images/Interested-Anaerobic.png" />
-                                    <label for="anaerobic">Anaerobic Action</label>
-                                    <input type="checkbox" value="1" checked="checked" name="anaerobic"
-                                        id="anaerobic" />
+                    <h2 class="form_big_title">WELCOME TO JOIN US!</h2>
+                    <p class="form_left_title">Free Trial Begin Enjoy Your Journey with Us</p>
+                    <div class="form_wrapper">
+                        <div class="form_tag"></div>
+                        <img class="icon_user" width=30px src="./images/Icon heart.png" />
+                        <div class="interest_slogan">Choose Physical Activity Fields You Are Interested In</div>
+                        <form method="POST" onsubmit="return checkInterest(this)">
+                            <div class="interest_wrapper">
+                                <div class="interest_wrapper_column">
+                                    <div class="interest_img_wrapper">
+                                        <img src="./images/Interested-Anaerobic.png" />
+                                        <label for="anaerobic">Anaerobic Action</label>
+                                        <input type="checkbox" value="1" checked="checked" name="anaerobic"
+                                            id="anaerobic" />
+                                    </div>
+                                    <div class="interest_img_wrapper">
+                                        <img src="./images/Interested-weight.png" />
+                                        <label for="weight">Weight Training</label>
+                                        <input type="checkbox" value="2" checked="checked" name="weight" id="weight" />
+                                    </div>
+                                    <div class="interest_img_wrapper">
+                                        <img src="./images/Interested-yoga.png" />
+                                        <label for="yoga">Yoga</label>
+                                        <input type="checkbox" value="3" checked="checked" name="yoga" id="yoga" />
+                                    </div>
                                 </div>
-                                <div>
-                                    <img src="./images/Interested-weight.png" />
-                                    <label for="weight">Anaerobic Action</label>
-                                    <input type="checkbox" value="2" checked="checked" name="weight" id="weight" />
+                                <div class="interest_wrapper_column">
+                                    <div class="interest_img_wrapper">
+                                        <img src="./images/Interested-rope-sikp.png" />
+                                        <label for="sikp">Rope Skipping</label>
+                                        <input type="checkbox" value="4" checked="checked" name="sikp" id="sikp" />
+                                    </div>
+                                    <div class="interest_img_wrapper">
+                                        <img src="./images/Interested-run.png" />
+                                        <label for="run">Runningn</label>
+                                        <input type="checkbox" value="5" checked="checked" name="run" id="run" />
+                                    </div>
+                                    <div class="interest_img_wrapper">
+                                        <img src="./images/Interested-swim.png" />
+                                        <label for="swim">Swimming</label>
+                                        <input type="checkbox" value="6" checked="checked" name="swim" id="swim" />
+                                    </div>
                                 </div>
-                                <div>
-                                    <img src="./images/Interested-yoga.png" />
-                                    <label for="yoga">Anaerobic Action</label>
-                                    <input type="checkbox" value="3" checked="checked" name="yoga" id="yoga" />
-                                </div>
-                                <div>
-                                    <img src="./images/Interested-rope-sikp.png" />
-                                    <label for="sikp">Anaerobic Action</label>
-                                    <input type="checkbox" value="4" checked="checked" name="sikp" id="sikp" />
-                                </div>
-                                <div>
-                                    <img src="./images/Interested-run.png" />
-                                    <label for="run">Anaerobic Action</label>
-                                    <input type="checkbox" value="5" checked="checked" name="run" id="run" />
-                                </div>
-                                <div>
-                                    <img src="./images/Interested-swim.png" />
-                                    <label for="swim">Anaerobic Action</label>
-                                    <input type="checkbox" value="6" checked="checked" name="swim" id="swim" />
-                                </div>
-                                <input type="submit" value="Start Your Trip On Personal Training" />
-                            </form>
-                        </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <input class="submit_button" style="width: 360px;" type="submit"
+                                    value="Start Your Trip On Personal Training" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
 
         </sidebar>
     </div>
+    <header style="display: none;">
+        <div class="mobile_screen">
+            <div class=""><img src='./images/Icon open.png' /></div>
+            <div class=""><img src='./images/Icon search.png' /></div>
+            <div class="header_logo">
+                <img src='./images/logo.png' />
+            </div>
+            <p>LOGN IN</p>
+        </div>
+        <div class="pc_search"><img src='./images/Icon search.png' /></div>
+        <div><img src='./images/Icon heart.png' /></div>
 
+    </header>
     <footer class="footer_text">
-        <div></div>
-        <p>FAQS</p>
+        <div>FAQS</div>
+        <div>PRIVACY POLICY</div>
+        <div>TERMS & CONDITIONS</div>
     </footer>
     <script type="text/javascript" src="./scripts/router.js"></script>
     <script type="text/javascript" src="./scripts/sign_in.js"></script>

@@ -1,5 +1,7 @@
 function clickSign(){
-    location.hash = "#/SIGN_UP"
+    showHeader()
+    showFooter()
+    location.hash = "#/SIGN_IN_UP"
 }
 
 function checkSigUp(object) {
@@ -62,6 +64,8 @@ function checkDone(object){
 }
 
 function checkInterest(object){
+    closeFooter()
+    closeHeader()
     location.hash = "#/"
     return false
 }
@@ -150,4 +154,23 @@ function changeSignUpPages(changePage) {
   let page = document.querySelector(changePage);
   console.log(page)
   page.style.display = "block";
+}
+
+function showHeader(){
+    let header = document.querySelector("header");
+    header.style.display = "flex"
+}
+function closeHeader(){
+    let header = document.querySelector("header");
+    header.style.display = "none"
+}
+
+function showFooter(){
+    let footer = document.querySelector("footer");
+    footer.style.display = "flex"
+}
+
+function closeFooter(){
+    let footer = document.querySelector("footer");
+    footer.style.display = "none"
 }
