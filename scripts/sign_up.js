@@ -1,5 +1,19 @@
-function clickSign() {
-  location.hash = "#/SIGN_IN_UP";
+function clickSignIn() {
+  location.hash = "#/SIGN_IN_INDEX";
+}
+function clickSignUp() {
+  location.hash = "#/SIGN_UP_INDEX";
+}
+
+function changeCurrentCustomer(){
+  location.hash = "#/SIGN_UP_INDEX";
+}
+function changeNewCustomer(){
+  location.hash = "#/SIGN_IN_INDEX";
+}
+
+function backToTop(){
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
 function checkSigUp(object) {

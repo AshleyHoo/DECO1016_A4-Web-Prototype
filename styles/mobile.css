@@ -1,0 +1,223 @@
+/* Mobile &  Tablet Styles */
+@media only screen and (max-width: 960px) {
+  header {
+    background: #ffffff;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 20;
+    margin: 0.4em 0;
+  }
+  footer {
+    position: relative;
+    color: #c8a985;
+    margin-top: 20px;
+  }
+  .pc_search {
+    display: none;
+  }
+  .section_left {
+    display: none;
+  }
+  .sing_in_button {
+    display: none;
+  }
+  .index_banner {
+    width: 100%;
+  }
+  .index_page_left_wrapper {
+    position: relative;
+  }
+  .sign_up_button {
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background: none;
+    border: 5px solid #ffffff;
+    top: 3%;
+    left: 4%;
+  }
+  .index_page_slogan_wrapper {
+    display: none;
+  }
+  .index_page_right_title {
+    background: #b8d9c1;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+  }
+  .arrow_box {
+    display: none;
+  }
+  .img_block {
+    padding: 4px 4px !important;
+  }
+  .index_page_right_img_wrapper {
+    margin-top: 0 !important;
+  }
+  .index_page_slogan_mobile {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 36px 36px 36px;
+    height: 100%;
+    background: #b8d9c1;
+    color: #ffffff;
+    margin-left: -1px;
+  }
+  .back_to_top {
+    display: flex;
+    height: 4em;
+    justify-content: center;
+    align-items: center;
+  }
+  .back_to_top span {
+    margin-left: 10px;
+  }
+  .form_tag,
+  .icon_user {
+    display: none;
+  }
+
+  /* sign in & sing up */
+  .form_big_title {
+    background: #f2f2f2;
+  }
+  .form {
+    box-sizing: border-box;
+    padding: 0 6vw;
+  }
+  .form_little_title {
+    display: inline;
+    line-height: 2em;
+  }
+  .current_customer_button {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 1em;
+    width: 5em;
+    height: 2em;
+  }
+  .sign_in_form,
+  .sign_up_creat {
+    position: relative;
+  }
+  .form_left_title {
+    background: #b8d9c1;
+    color: #fff;
+    line-height: 2em;
+    text-align: center;
+    width: 100%;
+  }
+  .creat_form_title{
+    width: calc(100% + 12vw);
+    margin-left: -6vw;
+
+  }
+  .submit_button_wrapper {
+    text-align: center;
+  }
+  
+  .form_wrapper{
+    box-sizing: border-box;
+    padding: 0 6vw;
+  }
+  .green_banner {
+    background: #b8d9c1;
+    color: #fff;
+    width: calc(100% + 12vw);
+    margin-left: -6vw;
+    font-size: 1em;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    font-style: italic;
+    margin-top: 8vw;
+  }
+  .current_goal_weight {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .form_under_little_title {
+    width: 100%;
+  }
+
+  .human_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .complexion_box {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    box-sizing: border-box;
+    padding: 4vw 4vw;
+    width: 70%;
+    height: 25vw;
+  }
+  .complexion_box_column {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .complexion_box_item {
+    border: 2px solid #c8a985;
+    line-height: 2em;
+    width: 6em;
+    text-align: center;
+  }
+  .complexion_box_item:focus {
+    background: #c8a985;
+    color: #fff;
+  }
+  .form_left_title_interest{
+    display: none;
+  }
+  .form_wrapper_interest{
+    background: #b8d9c1;
+    padding: 0;
+  }
+  .interest_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3em;
+    padding: 0;
+  }
+  .interest_wrapper span {
+    margin-top: 8px;
+  }
+  .interest_wrapper_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .interest_img_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+  }
+  .interest_img_wrapper label {
+    margin-top: 10px;
+  }
+  .interest_slogan{
+    position: relative;
+    font-size: 1.6em;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 1em;
+    box-sizing: border-box;
+}
+  }
+}

@@ -7,9 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WEB PROTOTYPE</title>
     <link rel="stylesheet" href="./styles/index.css" type="text/css">
+    <link rel="stylesheet" href="./styles/destop.css" type="text/css">
+    <link rel="stylesheet" href="./styles/mobile.css" type="text/css">
 </head>
 
 <body>
+    <header style="display: none;">
+        <div class="mobile_screen"><img src='./images/Icon open.png' /></div>
+        <div class="mobile_screen"><img src='./images/Icon search.png' /></div>
+        <div class="mobile_screen header_logo">
+            <img src='./images/logo.png' />
+        </div>
+        <p class="mobile_screen" onclick="return clickSignIn()">LOG IN</p>
+        <div class="pc_search"><img src='./images/Icon search.png' /></div>
+        <div><img src='./images/Icon heart.png' /></div>
+
+    </header>
     <!-- Left navigation bar -->
     <div class="content_wrapper">
         <section class="section_left">
@@ -67,12 +80,12 @@
             <div class="index_page">
                 <div class="index_page_left_wrapper">
                     <img class="index_banner" height=64% src='./images/index-banner.png' />
-                    <button class="sing_in_button" onclick="return clickSign()">LOG IN</button>
-                    <button class="sign_up_button" onclick="return clickSign()"> SIGN UP! </button>
+                    <button class="sing_in_button" onclick="return clickSignIn()">LOG IN</button>
+                    <button class="sign_up_button" onclick="return clickSignUp()"> SIGN UP! </button>
                     <div class="index_page_slogan_wrapper">
                         <img class="index-banner2" height="100%" src='./images/index-banner2.png' />
                         <div class="index_page_slogan">
-                            <span class="slogan_first">JOIN US NOW!</span>
+                            <span class="slogan_first" onclick="return clickSignUp()">JOIN US NOW!</span>
                             <span class="slogan_second">AND START
                                 ENJOYING
                                 YOUR
@@ -82,7 +95,6 @@
                             <span class="slogan_third">by our professional
                                 instructor and system</span>
                         </div>
-
                     </div>
                 </div>
                 <div class="index_page_right_wrapper">
@@ -123,7 +135,21 @@
                             <img src="./images/index-gift.png" />
                         </div>
                     </div>
-
+                </div>
+                <div class="index_page_slogan_mobile">
+                    <span class="slogan_first" onclick="return clickSignUp()">JOIN US NOW!</span>
+                    <span class="slogan_second">AND START
+                        ENJOYING
+                        YOUR
+                        PERSONAL
+                        TRAINING
+                    </span>
+                    <span class="slogan_third">by our professional
+                        instructor and system</span>
+                </div>
+                <div class="back_to_top" onclick="return backToTop()">
+                    <img src="./images/Icon arrow circle up.png" />
+                    <span>BACK TO TOP</span>
                 </div>
             </div>
             <div class="about_us" style="display: none;">About US</div>
@@ -134,10 +160,11 @@
             <div class="sign_in_sign_up" style="display: none;">
                 <div class="">
                     <h2 class="form_big_title">SIGN IN / SIGN UP</h2>
-                    <p class="form_left_title">Ready to start 30 days free trial?</p>
                     <div class="form">
                         <div class="sign_in_form">
                             <p class="form_little_title">CURRENT CUSTOMER</p>
+                            <button class="current_customer_button" onclick="return changeCurrentCustomer()"><img
+                                    src="./images/Icon arrow down.png" /> </button>
                             <!-- <form onsubmit="return checkSignIn(this)"> -->
                             <form action="#/" method="post" onsubmit="return checkSignIn(this)">
                                 <p class="require_text">Required Field * </p>
@@ -150,59 +177,69 @@
                                             value="1" checked="checked" /> REMEMBER ME</label>
                                 </div>
                                 <div class="warn_text" id="warning_sign_in"> </div>
-                                <input class="submit_button" type="submit" style="width: 100px;" value="SIGN IN" />
+                                <div class="submit_button_wrapper">
+                                    <input class="submit_button" type="submit" style="width: 100px;" value="SIGN IN" />
+                                </div>
                             </form>
                         </div>
                         <div class="sign_up_creat_form">
-                            <p class="form_little_title">NEW CUSTOMER</p>
-                            <div class="form_tag"></div>
-                            <img class="icon_user" src="./images/Icon user.png" />
-                            <form action="#/SIGN_UP" method="post" onsubmit="return checkSigUp(this)">
-                                <p class="require_text">Required Field * </p>
-                                <div class="gender_wrapper">
-                                    <span>TITLE *</span>
-                                    <div>
-                                        <label><input class="radioTitle" type="radio" name="title" value="MRS.">
-                                            MRS.</label>
+                            <p class="form_left_title creat_form_title">Ready to start 30 days free trial?</p>
+                            <div class="sign_up_creat">
+                                <p class="form_little_title">NEW CUSTOMER</p>
+                                <button class="current_customer_button" onclick="return changeNewCustomer()"><img
+                                        src="./images/Icon arrow up.png" /> </button>
+                                <div class="form_tag"></div>
+                                <img class="icon_user" src="./images/Icon user.png" />
+                                <form action="#/SIGN_UP" method="post" onsubmit="return checkSigUp(this)">
+                                    <p class="require_text">Required Field * </p>
+                                    <div class="gender_wrapper">
+                                        <span>TITLE *</span>
+                                        <div>
+                                            <label><input class="radioTitle" type="radio" name="title" value="MRS.">
+                                                MRS.</label>
+                                        </div>
+                                        <div>
+                                            <label><input class="radioTitle" type="radio" name="title" value="MRS."
+                                                    checked="checked"> MS.</label>
+                                        </div>
+                                        <div>
+                                            <label><input class="radioTitle" type="radio" name="title" value="MR.">
+                                                MR.</label>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <label><input class="radioTitle" type="radio" name="title" value="MRS."
-                                                checked="checked"> MS.</label>
+                                    <input class="input_underline" style="width: 60%;" type="text" name="username"
+                                        placeholder="USERNAME*" />
+                                    <input class="input_underline" type="text" name="email"
+                                        placeholder="EMAIL ADDRESS*" />
+                                    <input class="input_underline" type="password" name="password"
+                                        placeholder="PASSWORD* (must contain letters and numbers (Length 6-16))" />
+                                    <input class="input_underline" type="password" name="rePassword"
+                                        placeholder="CONFIRM PASSWORD*" />
+                                    <p class="little_text">BY REGISTERING YOUR DETAILS YOU AGREE TO OUR <span
+                                            style="color: #c8a985;">TERMS AND CONDITIONS AND PRIVACY AND
+                                            COOKIE
+                                            POLICY
+                                        </span>
+                                    </p>
+                                    <div class="checkbox_text">
+                                        <label><input class="checkedTitle" id="checkbox_receive_news" type="checkbox"
+                                                value="1" checked="checked" /> I WOULD LIKE TO RECEIVE
+                                            SCEND FITNESS LATEST
+                                            NEWS</label>
                                     </div>
-                                    <div>
-                                        <label><input class="radioTitle" type="radio" name="title" value="MR.">
-                                            MR.</label>
+                                    <div class="warn_text" id="warning_sign_up"></div>
+                                    <div class="submit_button_wrapper">
+                                        <input class="submit_button" style="width: 200px;" type="submit"
+                                            value="CREATE MY ACCOUNT" />
                                     </div>
+                                </form>
+                                <div class="circle_wrapper">
+                                    <div class="circle circleInPage"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
                                 </div>
-                                <input class="input_underline" style="width: 60%;" type="text" name="username"
-                                    placeholder="USERNAME*" />
-                                <input class="input_underline" type="text" name="email" placeholder="EMAIL ADDRESS*" />
-                                <input class="input_underline" type="password" name="password"
-                                    placeholder="PASSWORD* (must contain letters and numbers (Length 6-16))" />
-                                <input class="input_underline" type="password" name="rePassword"
-                                    placeholder="CONFIRM PASSWORD*" />
-                                <p class="little_text">BY REGISTERING YOUR DETAILS YOU AGREE TO OUR <span
-                                        style="color: #c8a985;">TERMS AND CONDITIONS AND PRIVACY AND
-                                        COOKIE
-                                        POLICY
-                                    </span>
-                                </p>
-                                <div class="checkbox_text">
-                                    <label><input class="checkedTitle" id="checkbox_receive_news" type="checkbox"
-                                            value="1" checked="checked" /> I WOULD LIKE TO RECEIVE
-                                        SCEND FITNESS LATEST
-                                        NEWS</label>
-                                </div>
-                                <div class="warn_text" id="warning_sign_up"></div>
-                                <input class="submit_button" style="width: 200px;" type="submit"
-                                    value="CREATE MY ACCOUNT" />
-                            </form>
-                            <div class="circle_wrapper">
-                                <div class="circle circleInPage"></div>
-                                <div class="circle"></div>
-                                <div class="circle"></div>
-                                <div class="circle"></div>
-                                <div class="circle"></div>
                             </div>
                         </div>
                     </div>
@@ -240,7 +277,7 @@
                                     <div>
                                         <label class="input_title" for="cardNumber">CARD NUMBER*</label>
                                         <div class="input_img_position">
-                                            <input class="input_box" style="width: 360px;" type="text" name="cardNumber"
+                                            <input class="input_box" style="width: 20em;" type="text" name="cardNumber"
                                                 placeholder="ONLY NUMBER" id="cardNumber"
                                                 onkeyup="this.value=this.value.replace(/\D/g,'')" />
                                             <img class="input_img" src="./images/lock.png" />
@@ -258,7 +295,7 @@
                                 </div>
                                 <div class="input_box_wrapper">
                                     <label class="input_title" for="expirationDate">Expiration Date*</label>
-                                    <div class="input_img_position" style="width: 200px;" >
+                                    <div class="input_img_position" style="width: 200px;">
                                         <input class="input_box" style="width: 200px;" type="text" class="datepicker"
                                             name="expirationDate" id="expirationDate" />
                                         <!-- <img class="input_img" src="./images/date.png" /> -->
@@ -274,8 +311,10 @@
                                     ends on 12/10/19.
                                     Only $17 per month after the end day.
                                 </div>
-                                <input class="submit_button" style="width: 160px;" type="submit"
-                                    value="Billing Details" />
+                                <div class="submit_button_wrapper">
+                                    <input class="submit_button" style="width: 160px;" type="submit"
+                                        value="Billing Details" />
+                                </div>
                             </form>
                             <div class="circle_wrapper">
                                 <div class="circle"></div>
@@ -335,8 +374,10 @@
                                     ends on 12/10/19.
                                     Only $17 per month after the end day.
                                 </div>
-                                <input class="submit_button" style="width: 160px;" type="submit"
-                                    value="Personal Setting" />
+                                <div class="submit_button_wrapper">
+                                    <input class="submit_button" style="width: 160px;" type="submit"
+                                        value="Personal Setting" />
+                                </div>
                             </form>
                             <div class="circle_wrapper">
                                 <div class="circle"></div>
@@ -384,8 +425,10 @@
                                     ends on 12/10/19.
                                     Only $17 per month after the end day.
                                 </div>
-                                <input class="submit_button" style="width: 300px;" type="submit"
-                                    value="Preferred Body Parts for Exercise" />
+                                <div class="submit_button_wrapper">
+                                    <input class="submit_button" style="width: 300px;" type="submit"
+                                        value="Preferred Body Parts for Exercise" />
+                                </div>
                             </form>
                             <div class="circle_wrapper">
                                 <div class="circle"></div>
@@ -427,7 +470,10 @@
                                     ends on 12/10/19.
                                     Only $17 per month after the end day.
                                 </div>
-                                <input class="submit_button" style="width: 100px;" type="submit" value="All Done!" />
+                                <div class="submit_button_wrapper">
+                                    <input class="submit_button" style="width: 100px;" type="submit"
+                                        value="All Done!" />
+                                </div>
                             </form>
                             <div class="circle_wrapper">
                                 <div class="circle"></div>
@@ -441,8 +487,8 @@
                 </div>
                 <div class="choose_interest" style="display: none;">
                     <h2 class="form_big_title">WELCOME TO JOIN US!</h2>
-                    <p class="form_left_title">Free Trial Begin Enjoy Your Journey with Us</p>
-                    <div class="form_wrapper">
+                    <p class="form_left_title form_left_title_interest">Free Trial Begin Enjoy Your Journey with Us</p>
+                    <div class="form_wrapper form_wrapper_interest">
                         <div class="form_tag"></div>
                         <img class="icon_user" width=30px src="./images/Icon heart.png" />
                         <div class="interest_slogan">Choose Physical Activity Fields You Are Interested In</div>
@@ -459,7 +505,8 @@
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-weight.png" />
                                         <label for="weight"><input class="checkedTitle" type="checkbox" value="2"
-                                                checked="checked" name="weight" id="weight" /> Weight Training</label>
+                                                checked="checked" name="weight" id="weight" /> Weight
+                                            Training</label>
                                     </div>
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-yoga.png" />
@@ -492,23 +539,10 @@
                         </form>
                     </div>
                 </div>
-            </div>
+
 
         </sidebar>
     </div>
-    <header style="display: none;">
-        <div class="mobile_screen">
-            <div class=""><img src='./images/Icon open.png' /></div>
-            <div class=""><img src='./images/Icon search.png' /></div>
-            <div class="header_logo">
-                <img src='./images/logo.png' />
-            </div>
-            <p>LOGN IN</p>
-        </div>
-        <div class="pc_search"><img src='./images/Icon search.png' /></div>
-        <div><img src='./images/Icon heart.png' /></div>
-
-    </header>
     <footer class="footer_text" style="display: none;">
         <div>FAQS</div>
         <div>PRIVACY POLICY</div>
