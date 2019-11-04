@@ -29,13 +29,17 @@ let pages = document.querySelectorAll("sidebar>div");
 console.log(pages)
 
 MyRouter.map("/", function() {
+  closeFooter()
+  closeHeader()
   pages.forEach((item) => {
     item.style.display = "none"
   })
   let page = document.querySelector(".index_page");
-  page.style.display = "block"
+  page.style.display = "flex"
 });
 MyRouter.map("/SIGN_IN_UP", function() {
+  showHeader()
+  showFooter()
   pages.forEach((item) => {
     item.style.display = "none"
   })
@@ -94,3 +98,22 @@ MyRouter.map("/contact", function() {
   page.style.display = "block"
 
 });
+
+function showHeader(){
+  let header = document.querySelector("header");
+  header.style.display = "flex"
+}
+function closeHeader(){
+  let header = document.querySelector("header");
+  header.style.display = "none"
+}
+
+function showFooter(){
+  let footer = document.querySelector("footer");
+  footer.style.display = "flex"
+}
+
+function closeFooter(){
+  let footer = document.querySelector("footer");
+  footer.style.display = "none"
+}

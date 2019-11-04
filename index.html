@@ -143,11 +143,11 @@
                                 <p class="require_text">Required Field * </p>
                                 <input class="input_underline" type="text" name="email" placeholder="EMAIL ADDRESS*" />
                                 <input class="input_underline" type="password" name="password"
-                                    placeholder="PASSWORD*" />
+                                    placeholder="PASSWORD*(Length 6-16)" />
                                 <p class="left_little_text">FORGOT YOUR PASSWORD?</p>
                                 <div class="checkbox_text">
-                                    <input id="checkbox_remember_me" type="checkbox" value="1" checked="checked" />
-                                    <label for="checkbox_remember_me">REMEMBER ME</label>
+                                    <label><input class="checkedTitle" id="checkbox_remember_me" type="checkbox"
+                                            value="1" checked="checked" /> REMEMBER ME</label>
                                 </div>
                                 <div class="warn_text" id="warning_sign_in"> </div>
                                 <input class="submit_button" type="submit" style="width: 100px;" value="SIGN IN" />
@@ -162,20 +162,23 @@
                                 <div class="gender_wrapper">
                                     <span>TITLE *</span>
                                     <div>
-                                        <input class="radioTitle" name="title" type="radio" value="MRS." />MRS.</div>
-                                    <div>
-                                        <input class="radioTitle" name="title" type="radio" checked="checked"
-                                            value="MS." />MS.
+                                        <label><input class="radioTitle" type="radio" name="title" value="MRS.">
+                                            MRS.</label>
                                     </div>
                                     <div>
-                                        <input class="radioTitle" name="title" type="radio" value="MR." />MR.
+                                        <label><input class="radioTitle" type="radio" name="title" value="MRS."
+                                                checked="checked"> MS.</label>
+                                    </div>
+                                    <div>
+                                        <label><input class="radioTitle" type="radio" name="title" value="MR.">
+                                            MR.</label>
                                     </div>
                                 </div>
                                 <input class="input_underline" style="width: 60%;" type="text" name="username"
                                     placeholder="USERNAME*" />
                                 <input class="input_underline" type="text" name="email" placeholder="EMAIL ADDRESS*" />
                                 <input class="input_underline" type="password" name="password"
-                                    placeholder="PASSWORD* (must contain letters and numbers)" />
+                                    placeholder="PASSWORD* (must contain letters and numbers (Length 6-16))" />
                                 <input class="input_underline" type="password" name="rePassword"
                                     placeholder="CONFIRM PASSWORD*" />
                                 <p class="little_text">BY REGISTERING YOUR DETAILS YOU AGREE TO OUR <span
@@ -185,8 +188,8 @@
                                     </span>
                                 </p>
                                 <div class="checkbox_text">
-                                    <input id="checkbox_receive_news" type="checkbox" value="1" checked="checked" />
-                                    <label for="checkbox_receive_news">I WOULD LIKE TO RECEIVE
+                                    <label><input class="checkedTitle" id="checkbox_receive_news" type="checkbox"
+                                            value="1" checked="checked" /> I WOULD LIKE TO RECEIVE
                                         SCEND FITNESS LATEST
                                         NEWS</label>
                                 </div>
@@ -238,7 +241,8 @@
                                         <label class="input_title" for="cardNumber">CARD NUMBER*</label>
                                         <div class="input_img_position">
                                             <input class="input_box" style="width: 360px;" type="text" name="cardNumber"
-                                                id="cardNumber" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+                                                placeholder="ONLY NUMBER" id="cardNumber"
+                                                onkeyup="this.value=this.value.replace(/\D/g,'')" />
                                             <img class="input_img" src="./images/lock.png" />
                                         </div>
 
@@ -250,27 +254,22 @@
                                                 name="securityCode" id="securityCode" />
                                             <img class="input_img" src="./images/lock.png" />
                                         </div>
-
                                     </div>
                                 </div>
-
                                 <div class="input_box_wrapper">
                                     <label class="input_title" for="expirationDate">Expiration Date*</label>
-                                    <div class="input_img_position" style="width: 200px;">
+                                    <div class="input_img_position" style="width: 200px;" >
                                         <input class="input_box" style="width: 200px;" type="text" class="datepicker"
-                                            name="expirationDate" id="expirationDate">
-                                        <img class="input_img" src="./images/date.png" />
+                                            name="expirationDate" id="expirationDate" />
+                                        <!-- <img class="input_img" src="./images/date.png" /> -->
                                     </div>
-
                                 </div>
                                 <div class="checkbox_text">
-                                    <input id="checkbox_billing_detials_for" type="checkbox" value="1"
-                                        checked="checked" />
-                                    <label for="checkbox_billing_detials_for">I agree to the Terms of Use and
-                                        Privacy
-                                        Policy.</label>
-
+                                    <label><input class="checkedTitle" id="checkbox_billing_detials_for" type="checkbox"
+                                            value="1" checked="checked" /> I agree to the Terms of Use and
+                                        Privacy Policy.</label>
                                 </div>
+                                <div class="warn_text" id="warning_billing_detail"></div>
                                 <div class="green_banner">Free trial starts from today and
                                     ends on 12/10/19.
                                     Only $17 per month after the end day.
@@ -327,10 +326,11 @@
                                 <div class="input_box_wrapper">
                                     <label class="input_title" for="country">Country*</label>
                                     <div class="input_img_position" style="width: 160px;">
-                                        <input class="input_box" style="width: 160px;" type="text" class="country">
+                                        <input class="input_box" style="width: 160px;" type="text" name="country">
                                         <img class="input_img" src="./images/down arrow.png" />
                                     </div>
                                 </div>
+                                <div class="warn_text" id="warning_personal_setting"></div>
                                 <div class="green_banner">Free trial starts from today and
                                     ends on 12/10/19.
                                     Only $17 per month after the end day.
@@ -414,12 +414,12 @@
                                     <img src="./images/human.png" />
                                     <div class="complexion_box">
                                         <div class="complexion_box_column">
-                                            <span class="item">BACK</span>
-                                            <span class="item">ARM</span>
+                                            <button type="button" class="complexion_box_item">BACK</button>
+                                            <button type="button" class="complexion_box_item">ARM</button>
                                         </div>
                                         <div class="complexion_box_column">
-                                            <span class="item">HIP</span>
-                                            <span class="item">WAIST</span>
+                                            <button type="button" class="complexion_box_item">HIP</button>
+                                            <button type="button" class="complexion_box_item">WAIST</button>
                                         </div>
                                     </div>
                                 </div>
@@ -451,36 +451,37 @@
                                 <div class="interest_wrapper_column">
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-Anaerobic.png" />
-                                        <label for="anaerobic">Anaerobic Action</label>
-                                        <input type="checkbox" value="1" checked="checked" name="anaerobic"
-                                            id="anaerobic" />
+                                        <label for="anaerobic"><input class="checkedTitle" type="checkbox" value="1"
+                                                checked="checked" name="anaerobic" id="anaerobic" /> Anaerobic
+                                            Action</label>
+
                                     </div>
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-weight.png" />
-                                        <label for="weight">Weight Training</label>
-                                        <input type="checkbox" value="2" checked="checked" name="weight" id="weight" />
+                                        <label for="weight"><input class="checkedTitle" type="checkbox" value="2"
+                                                checked="checked" name="weight" id="weight" /> Weight Training</label>
                                     </div>
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-yoga.png" />
-                                        <label for="yoga">Yoga</label>
-                                        <input type="checkbox" value="3" checked="checked" name="yoga" id="yoga" />
+                                        <label for="yoga"><input class="checkedTitle" type="checkbox" value="3"
+                                                checked="checked" name="yoga" id="yoga" /> Yoga</label>
                                     </div>
                                 </div>
                                 <div class="interest_wrapper_column">
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-rope-sikp.png" />
-                                        <label for="sikp">Rope Skipping</label>
-                                        <input type="checkbox" value="4" checked="checked" name="sikp" id="sikp" />
+                                        <label for="sikp"><input class="checkedTitle" type="checkbox" value="4"
+                                                checked="checked" name="sikp" id="sikp" /> Rope Skipping</label>
                                     </div>
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-run.png" />
-                                        <label for="run">Runningn</label>
-                                        <input type="checkbox" value="5" checked="checked" name="run" id="run" />
+                                        <label for="run"><input class="checkedTitle" type="checkbox" value="5"
+                                                checked="checked" name="run" id="run" /> Runningn</label>
                                     </div>
                                     <div class="interest_img_wrapper">
                                         <img src="./images/Interested-swim.png" />
-                                        <label for="swim">Swimming</label>
-                                        <input type="checkbox" value="6" checked="checked" name="swim" id="swim" />
+                                        <label for="swim"><input class="checkedTitle" type="checkbox" value="6"
+                                                checked="checked" name="swim" id="swim" /> Swimming</label>
                                     </div>
                                 </div>
                             </div>
@@ -508,7 +509,7 @@
         <div><img src='./images/Icon heart.png' /></div>
 
     </header>
-    <footer class="footer_text">
+    <footer class="footer_text" style="display: none;">
         <div>FAQS</div>
         <div>PRIVACY POLICY</div>
         <div>TERMS & CONDITIONS</div>
@@ -516,11 +517,14 @@
     <script type="text/javascript" src="./scripts/router.js"></script>
     <script type="text/javascript" src="./scripts/sign_in.js"></script>
     <script type="text/javascript" src="./scripts/sign_up.js"></script>
-    <!-- <script type="text/javascript" src="./scripts/date.js"></script>
-    <script type="text/javascript" src="./scripts/dataMain.js"></script>
+    <script type="text/javascript" src="./scripts/laydate/laydate.js"></script>
     <script>
-        datepicker.init('.datepicker');
-    </script> -->
+        laydate.render({
+            elem: '#expirationDate', //指定元素
+            lang: 'en',
+            theme: '#c8a985'
+        });
+    </script>
 </body>
 
 </html>

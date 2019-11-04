@@ -17,7 +17,7 @@ function checkSignIn(object) {
 function checkPassword(password, warning) {
   let pattner = "/^[w_-]{6,16}$/";
   if (password.value == "" || password.value == null) {
-    warning.innerHTML = "password can not be blank";
+    warning.innerHTML = "Password can not be blank";
     return false;
   } else {
     if (!pattner.test(password.value)) {
@@ -34,10 +34,10 @@ function checkPassword(password, warning) {
 function checkEmail(email, warning) {
   let pattner = /^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/;
   if (email.value == "" || email.value == "null") {
-    warning.innerHTML = "email can not be blank";
+    warning.innerHTML = "Email can not be blank";
     return false;
   } else if(!pattner.test(email.value)){
-    warning.innerHTML = "email format is incorrect"
+    warning.innerHTML = "Email format is incorrect"
   } else {
     return true;
   }

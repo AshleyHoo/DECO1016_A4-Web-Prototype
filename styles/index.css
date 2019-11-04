@@ -6,8 +6,11 @@ a {
   text-decoration: none;
   color: #999999;
 }
+input{
+  outline: none;
+}
 img {
-  display: inline-block !important;
+  /* display: inline-block !important; */
 }
 .header {
   width: 100%;
@@ -49,6 +52,72 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.radioTitle,.checkedTitle {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #ffffff;
+  border: solid 1px #c8a985;
+  -webkit-border-radius: 0.6rem;
+  border-radius: 0.6rem;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-appearance: none;  /**隐藏原生控件**/
+}
+      
+.checkedTitle {
+  border-radius: 0.1rem;   /**复选框的圆角要小一些**/
+}
+/**选择后的样式**/
+.radioTitle:checked{
+  background-color: #ffffff;
+  border: solid 1px #c8a985;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  text-align: center;
+  background-clip: padding-box;
+}
+.checkedTitle:checked{
+  background-color: #ffffff;
+  border: solid 1.6px #c8a985;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  text-align: center;
+  background-clip: padding-box;
+}
+/**选择后 里面小对勾样式**/
+.checkedTitle:checked:before{
+  content: '';
+  width: 0.5rem;
+  height: 0.3rem;
+  border: 1.6px solid #c8a985;
+  border-top: none;
+  border-right: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.3rem;
+  margin-top: -0.3rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.radioTitle:checked:before{
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #c8a985;
+  border-top: none;
+  border-right: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .circle_wrapper {
@@ -169,10 +238,10 @@ img {
     width: 16%;
     position: relative;
     height: 100%;
-    padding: 30px 0 30px 30px;
+    padding: 44px 0 44px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     box-sizing: border-box;
   }
   .index_logo {
@@ -183,10 +252,10 @@ img {
   .section_left ul li {
     list-style: none;
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-bottom: 1px solid #ffffff;
     text-align: left;
-    line-height: 50px;
+    line-height: 40px;
     font-size: 18px;
     font-weight: bold;
   }
@@ -265,7 +334,7 @@ img {
   .slogan_second {
     font-size: 20px;
     line-height: 25px;
-    margin-top: 20%;
+    margin-top: 16%;
   }
 
   .index_page_right_wrapper {
@@ -332,7 +401,7 @@ img {
   .sign_up_done,
   .choose_interest {
     height: 80%;
-    width: 60%;
+    width: 70%;
     position: relative;
   }
   .form_wrapper {
@@ -347,7 +416,7 @@ img {
   .form_big_title {
     text-align: center;
     color: #c8a985;
-    line-height: 3em;
+    line-height: 2em;
   }
   .form_left_title {
     text-align: right;
@@ -362,7 +431,7 @@ img {
   .form {
     display: flex;
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
   }
   .sign_in_form,
   .sign_up_creat_form {
@@ -387,9 +456,10 @@ img {
   }
 
   .warn_text {
+    position: absolute;
     color: red;
     font-size: 0.8em;
-    margin: 10px 0;
+    /* margin: 10px 0; */
   }
 
   .submit_button {
@@ -397,7 +467,7 @@ img {
     border: none;
     background-color: #333333;
     color: #ffffff;
-    margin: 40px 20px 10px;
+    margin: 20px 20px 10px;
   }
   .sign_up_creat_form {
     border: 4px solid #c8a985;
@@ -484,7 +554,7 @@ img {
     background: #b8d9c1;
     color: #fff;
     width: 36%;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     box-sizing: border-box;
     padding: 10px 10px;
@@ -524,11 +594,15 @@ img {
     display: flex;
     justify-content: space-between;
   }
-  .complexion_box_column span{
+  .complexion_box_item {
     border: 2px solid #c8a985;
     line-height: 2em;
     width: 6em;
     text-align: center;
+  }
+  .complexion_box_item:focus{
+    background: #c8a985;
+    color: #fff;
   }
 
   .interest_slogan{
@@ -550,6 +624,9 @@ img {
     justify-content: space-evenly;
     margin-top: 3em;
   }
+  .interest_wrapper span{
+    margin-top: 8px;
+  }
   .interest_wrapper_column{
     display: flex;
     justify-content: space-evenly;
@@ -560,5 +637,8 @@ img {
     flex-direction: column;
     align-items: center;
     margin-top: 1em;
+  }
+  .interest_img_wrapper label{
+    margin-top: 10px;
   }
 }
