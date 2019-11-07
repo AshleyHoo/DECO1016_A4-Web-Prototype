@@ -249,16 +249,16 @@
   .complexion_box {
     display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
-    margin-left: 14%;
+    align-content: space-around;
+    margin-left: 10%;
     box-sizing: border-box;
-    padding: 80px 20px;
+    padding: 10% 5%;
     width: 40%;
   }
   .complexion_box_column {
     flex-basis: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .complexion_box_item {
     border: 2px solid #c8a985;
@@ -306,5 +306,10 @@
   }
   .interest_img_wrapper label {
     margin-top: 10px;
+  }
+  .goback{
+    position: fixed;
+    top: 0.6em;
+    left: 1em;
   }
 }

@@ -115,16 +115,15 @@
     text-align: center;
     width: 100%;
   }
-  .creat_form_title{
+  .creat_form_title {
     width: calc(100% + 12vw);
     margin-left: -6vw;
-
   }
   .submit_button_wrapper {
     text-align: center;
   }
-  
-  .form_wrapper{
+
+  .form_wrapper {
     box-sizing: border-box;
     padding: 0 6vw;
   }
@@ -179,10 +178,10 @@
     background: #c8a985;
     color: #fff;
   }
-  .form_left_title_interest{
+  .form_left_title_interest {
     display: none;
   }
-  .form_wrapper_interest{
+  .form_wrapper_interest {
     background: #b8d9c1;
     padding: 0;
   }
@@ -210,7 +209,7 @@
   .interest_img_wrapper label {
     margin-top: 10px;
   }
-  .interest_slogan{
+  .interest_slogan {
     position: relative;
     font-size: 1.6em;
     text-align: center;
@@ -218,6 +217,14 @@
     font-weight: bold;
     padding-top: 1em;
     box-sizing: border-box;
-}
+  }
+  .input_box_wrapper_inline{
+    flex-direction: column;
+  }
+  .input_img{
+    display: none;
+  }
+  .goback{
+    position: absolute;
   }
 }

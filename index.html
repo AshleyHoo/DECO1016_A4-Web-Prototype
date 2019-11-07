@@ -9,24 +9,27 @@
     <link rel="stylesheet" href="./styles/index.css" type="text/css">
     <link rel="stylesheet" href="./styles/destop.css" type="text/css">
     <link rel="stylesheet" href="./styles/mobile.css" type="text/css">
+    <link rel="stylesheet" href="./styles/change.css" type="text/css">
 </head>
 
 <body>
     <header style="display: none;">
         <div class="mobile_screen"><img src='./images/Icon open.png' /></div>
         <div class="mobile_screen"><img src='./images/Icon search.png' /></div>
-        <div class="mobile_screen header_logo">
+        <div class="mobile_screen header_logo" style="visibility: hidden;">
+            <img src='./images/logo.png' />
+        </div>
+        <div class="mobile_screen header_logo" style="position: absolute;" onclick="return gobackFun('#/')">
             <img src='./images/logo.png' />
         </div>
         <p class="mobile_screen" onclick="return clickSignIn()">LOG IN</p>
         <div class="pc_search"><img src='./images/Icon search.png' /></div>
         <div><img src='./images/Icon heart.png' /></div>
-
     </header>
     <!-- Left navigation bar -->
     <div class="content_wrapper">
         <section class="section_left">
-            <div class="index_logo">
+            <div class="index_logo" onclick="return gobackFun('#/')">
                 <img src='./images/logo.png' />
             </div>
             <ul>
@@ -40,10 +43,10 @@
                     <a href="#/about">About Us</a>
                 </li>
                 <li>
-                    <a href="#/program">Personal Training Program</a>
+                    <a href="#/program">Training</a>
                 </li>
                 <li>
-                    <a href="#/history">Reward History</a>
+                    <a href="#/history">History</a>
                 </li>
                 <li>
                     <a href="#/community">Community</a>
@@ -158,6 +161,9 @@
             <div class="community" style="display: none;">Community</div>
             <div class="contact" style="display: none;">Contact</div>
             <div class="sign_in_sign_up" style="display: none;">
+                <div class="goback" onclick="return gobackFun('#/')">
+                    <img src="./images/goback.png" />
+                </div>
                 <div class="">
                     <h2 class="form_big_title">SIGN IN / SIGN UP</h2>
                     <div class="form">
@@ -247,6 +253,9 @@
             </div>
             <div class="sign_up" style="display: none;">
                 <div class="sign_up_billing_detial" style="display: none;">
+                    <div class="goback" onclick="return gobackFun('#/SIGN_IN_UP')">
+                        <img src="./images/goback.png" />
+                    </div>
                     <h2 class="form_big_title">SIGN UP</h2>
                     <p class="form_left_title">Let’s start your free 30 days! </p>
                     <div class="form_wrapper">
@@ -261,17 +270,17 @@
                         <div class="sign_up_billing_detials_form">
                             <form method="post" onsubmit="return checkBillingDetail(this)">
                                 <p class="require_text">Required Field * </p>
-                                <div class="input_box_wrapper">
-                                    <label class="input_title" for="firstName">FIRST NAME*</label>
-                                    <input class="input_box" style="width: 200px;" type="text" name="firstName"
-                                        id="firstName" />
-                                    <span class="input_tips">Must match your card</span>
-                                </div>
-                                <div class="input_box_wrapper">
-                                    <label class="input_title" for="lastName">LAST NAME*</label>
-                                    <input class="input_box" style="width: 200px;" type="text" name="lastName"
-                                        id="lastName" />
-                                    <span class="input_tips">Must match your card</span>
+                                <div class="input_box_wrapper input_box_wrapper_inline">
+                                    <div>
+                                        <label class="input_title" for="firstName">FIRST NAME*</label>
+                                        <input class="input_box" style="width: 200px;" type="text" name="firstName"
+                                            id="firstName" placeholder="Must match your card" />
+                                    </div>
+                                    <div>
+                                        <label class="input_title" for="lastName">LAST NAME*</label>
+                                        <input class="input_box" style="width: 200px;" type="text" name="lastName"
+                                            id="lastName" placeholder="Must match your card" />
+                                    </div>
                                 </div>
                                 <div class="input_box_wrapper input_box_wrapper_inline">
                                     <div>
@@ -293,12 +302,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="input_box_wrapper">
-                                    <label class="input_title" for="expirationDate">Expiration Date*</label>
-                                    <div class="input_img_position" style="width: 200px;">
-                                        <input class="input_box" style="width: 200px;" type="text" class="datepicker"
-                                            name="expirationDate" id="expirationDate" />
-                                        <!-- <img class="input_img" src="./images/date.png" /> -->
+                                <div class="input_box_wrapper input_box_wrapper_inline">
+                                    <div>
+                                        <label class="input_title" for="expirationDate">Expiration Date*</label>
+                                        <div class="input_img_position" style="width: 200px;">
+                                            <input class="input_box" style="width: 200px;" type="text"
+                                                class="datepicker" name="expirationDate" id="expirationDate" />
+                                            <!-- <img class="input_img" src="./images/date.png" /> -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="input_title" for="expirationDate">Date of Birth*</label>
+                                        <div class="input_img_position" style="width: 200px;">
+                                            <input class="input_box" style="width: 200px;" type="text"
+                                                class="datepicker" name="birthday" id="birthday" />
+                                            <!-- <img class="input_img" src="./images/date.png" /> -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="checkbox_text">
@@ -327,6 +346,9 @@
                     </div>
                 </div>
                 <div class="sign_up_personal_setting" style="display: none;">
+                    <div class="goback" onclick="return gobackFun('.sign_up_billing_detial')">
+                        <img src="./images/goback.png" />
+                    </div>
                     <h2 class="form_big_title ">SIGN UP</h2>
                     <p class="form_left_title">Let’s start your free 30 days! </p>
                     <div class="form_wrapper">
@@ -365,8 +387,260 @@
                                 <div class="input_box_wrapper">
                                     <label class="input_title" for="country">Country*</label>
                                     <div class="input_img_position" style="width: 160px;">
-                                        <input class="input_box" style="width: 160px;" type="text" name="country">
-                                        <img class="input_img" src="./images/down arrow.png" />
+                                        <select class="input_box" name="country" style="width:200px;">
+                                            <option value="" selected=""> Choose a country</option>
+                                            <option value=""> </option>
+                                            <option value="AF"> Afghanistan</option>
+                                            <option value="AL"> Albania</option>
+                                            <option value="DZ"> Algeria</option>
+                                            <option value="AS"> American Samoa</option>
+                                            <option value="AD"> Andorra</option>
+                                            <option value="AO"> Angola</option>
+                                            <option value="AI"> Anguilla</option>
+                                            <option value="AQ"> Antarctica</option>
+                                            <option value="AG"> Antigua and Barbuda</option>
+                                            <option value="AR"> Argentina</option>
+                                            <option value="AM"> Armenia</option>
+                                            <option value="AW"> Aruba</option>
+                                            <option value="AU"> Australia</option>
+                                            <option value="AT"> Austria</option>
+                                            <option value="AZ"> Azerbaijan</option>
+                                            <option value="BS"> Bahamas</option>
+                                            <option value="BH"> Bahrain</option>
+                                            <option value="BD"> Bangladesh</option>
+                                            <option value="BB"> Barbados</option>
+                                            <option value="BY"> Belarus</option>
+                                            <option value="BE"> Belgium</option>
+                                            <option value="BZ"> Belize</option>
+                                            <option value="BJ"> Benin</option>
+                                            <option value="BM"> Bermuda</option>
+                                            <option value="BT"> Bhutan</option>
+                                            <option value="BO"> Bolivia</option>
+                                            <option value="BQ"> Bonaire, Sint Eustatius, and Saba</option>
+                                            <option value="BA"> Bosnia and Herzegovina</option>
+                                            <option value="BW"> Botswana</option>
+                                            <option value="BV"> Bouvet Island</option>
+                                            <option value="BR"> Brazil</option>
+                                            <option value="IO"> British Indian Ocean Territory</option>
+                                            <option value="VG"> British Virgin Islands</option>
+                                            <option value="BN"> Brunei</option>
+                                            <option value="BG"> Bulgaria</option>
+                                            <option value="BF"> Burkina Faso</option>
+                                            <option value="BI"> Burundi</option>
+                                            <option value="CV"> Cabo Verde</option>
+                                            <option value="KH"> Cambodia</option>
+                                            <option value="CM"> Cameroon</option>
+                                            <option value="CA"> Canada</option>
+                                            <option value="KY"> Cayman Islands</option>
+                                            <option value="CF"> Central African Republic</option>
+                                            <option value="TD"> Chad</option>
+                                            <option value="CL"> Chile</option>
+                                            <option value="CN"> China</option>
+                                            <option value="CX"> Christmas Island</option>
+                                            <option value="CC"> Cocos [Keeling] Islands</option>
+                                            <option value="CO"> Colombia</option>
+                                            <option value="KM"> Comoros</option>
+                                            <option value="CG"> Congo</option>
+                                            <option value="CK"> Cook Islands</option>
+                                            <option value="CR"> Costa Rica</option>
+                                            <option value="HR"> Croatia</option>
+                                            <option value="CU"> Cuba</option>
+                                            <option value="CW"> Curaçao</option>
+                                            <option value="CY"> Cyprus</option>
+                                            <option value="CZ"> Czechia</option>
+                                            <option value="CD"> DR Congo</option>
+                                            <option value="DK"> Denmark</option>
+                                            <option value="DJ"> Djibouti</option>
+                                            <option value="DM"> Dominica</option>
+                                            <option value="DO"> Dominican Republic</option>
+                                            <option value="EC"> Ecuador</option>
+                                            <option value="EG"> Egypt</option>
+                                            <option value="SV"> El Salvador</option>
+                                            <option value="GQ"> Equatorial Guinea</option>
+                                            <option value="ER"> Eritrea</option>
+                                            <option value="EE"> Estonia</option>
+                                            <option value="SZ"> Eswatini</option>
+                                            <option value="ET"> Ethiopia</option>
+                                            <option value="FK"> Falkland Islands</option>
+                                            <option value="FO"> Faroe Islands</option>
+                                            <option value="FJ"> Fiji</option>
+                                            <option value="FI"> Finland</option>
+                                            <option value="FR"> France</option>
+                                            <option value="GF"> French Guiana</option>
+                                            <option value="PF"> French Polynesia</option>
+                                            <option value="TF"> French Southern Territories</option>
+                                            <option value="GA"> Gabon</option>
+                                            <option value="GM"> Gambia</option>
+                                            <option value="GE"> Georgia</option>
+                                            <option value="DE"> Germany</option>
+                                            <option value="GH"> Ghana</option>
+                                            <option value="GI"> Gibraltar</option>
+                                            <option value="GR"> Greece</option>
+                                            <option value="GL"> Greenland</option>
+                                            <option value="GD"> Grenada</option>
+                                            <option value="GP"> Guadeloupe</option>
+                                            <option value="GU"> Guam</option>
+                                            <option value="GT"> Guatemala</option>
+                                            <option value="GG"> Guernsey</option>
+                                            <option value="GN"> Guinea</option>
+                                            <option value="GW"> Guinea-Bissau</option>
+                                            <option value="GY"> Guyana</option>
+                                            <option value="HT"> Haiti</option>
+                                            <option value="HM"> Heard Island and McDonald Islands</option>
+                                            <option value="HN"> Honduras</option>
+                                            <option value="HK"> Hong Kong</option>
+                                            <option value="HU"> Hungary</option>
+                                            <option value="IS"> Iceland</option>
+                                            <option value="IN"> India</option>
+                                            <option value="ID"> Indonesia</option>
+                                            <option value="IR"> Iran</option>
+                                            <option value="IQ"> Iraq</option>
+                                            <option value="IE"> Ireland</option>
+                                            <option value="IM"> Isle of Man</option>
+                                            <option value="IL"> Israel</option>
+                                            <option value="IT"> Italy</option>
+                                            <option value="CI"> Ivory Coast</option>
+                                            <option value="JM"> Jamaica</option>
+                                            <option value="JP"> Japan</option>
+                                            <option value="JE"> Jersey</option>
+                                            <option value="JO"> Jordan</option>
+                                            <option value="KZ"> Kazakhstan</option>
+                                            <option value="KE"> Kenya</option>
+                                            <option value="KI"> Kiribati</option>
+                                            <option value="XK"> Kosovo</option>
+                                            <option value="KW"> Kuwait</option>
+                                            <option value="KG"> Kyrgyzstan</option>
+                                            <option value="LA"> Laos</option>
+                                            <option value="LV"> Latvia</option>
+                                            <option value="LB"> Lebanon</option>
+                                            <option value="LS"> Lesotho</option>
+                                            <option value="LR"> Liberia</option>
+                                            <option value="LY"> Libya</option>
+                                            <option value="LI"> Liechtenstein</option>
+                                            <option value="LT"> Lithuania</option>
+                                            <option value="LU"> Luxembourg</option>
+                                            <option value="MO"> Macao</option>
+                                            <option value="MG"> Madagascar</option>
+                                            <option value="MW"> Malawi</option>
+                                            <option value="MY"> Malaysia</option>
+                                            <option value="MV"> Maldives</option>
+                                            <option value="ML"> Mali</option>
+                                            <option value="MT"> Malta</option>
+                                            <option value="MH"> Marshall Islands</option>
+                                            <option value="MQ"> Martinique</option>
+                                            <option value="MR"> Mauritania</option>
+                                            <option value="MU"> Mauritius</option>
+                                            <option value="YT"> Mayotte</option>
+                                            <option value="MX"> Mexico</option>
+                                            <option value="FM"> Micronesia</option>
+                                            <option value="MD"> Moldova</option>
+                                            <option value="MC"> Monaco</option>
+                                            <option value="MN"> Mongolia</option>
+                                            <option value="ME"> Montenegro</option>
+                                            <option value="MS"> Montserrat</option>
+                                            <option value="MA"> Morocco</option>
+                                            <option value="MZ"> Mozambique</option>
+                                            <option value="MM"> Myanmar</option>
+                                            <option value="NA"> Namibia</option>
+                                            <option value="NR"> Nauru</option>
+                                            <option value="NP"> Nepal</option>
+                                            <option value="NL"> Netherlands</option>
+                                            <option value="NC"> New Caledonia</option>
+                                            <option value="NZ"> New Zealand</option>
+                                            <option value="NI"> Nicaragua</option>
+                                            <option value="NE"> Niger</option>
+                                            <option value="NG"> Nigeria</option>
+                                            <option value="NU"> Niue</option>
+                                            <option value="NF"> Norfolk Island</option>
+                                            <option value="KP"> North Korea</option>
+                                            <option value="MK"> North Macedonia</option>
+                                            <option value="MP"> Northern Mariana Islands</option>
+                                            <option value="NO"> Norway</option>
+                                            <option value="OM"> Oman</option>
+                                            <option value="PK"> Pakistan</option>
+                                            <option value="PW"> Palau</option>
+                                            <option value="PS"> Palestine</option>
+                                            <option value="PA"> Panama</option>
+                                            <option value="PG"> Papua New Guinea</option>
+                                            <option value="PY"> Paraguay</option>
+                                            <option value="PE"> Peru</option>
+                                            <option value="PH"> Philippines</option>
+                                            <option value="PN"> Pitcairn Islands</option>
+                                            <option value="PL"> Poland</option>
+                                            <option value="PT"> Portugal</option>
+                                            <option value="PR"> Puerto Rico</option>
+                                            <option value="QA"> Qatar</option>
+                                            <option value="RO"> Romania</option>
+                                            <option value="RU"> Russia</option>
+                                            <option value="RW"> Rwanda</option>
+                                            <option value="RE"> Réunion</option>
+                                            <option value="BL"> Saint Barthélemy</option>
+                                            <option value="SH"> Saint Helena</option>
+                                            <option value="LC"> Saint Lucia</option>
+                                            <option value="MF"> Saint Martin</option>
+                                            <option value="PM"> Saint Pierre and Miquelon</option>
+                                            <option value="WS"> Samoa</option>
+                                            <option value="SM"> San Marino</option>
+                                            <option value="SA"> Saudi Arabia</option>
+                                            <option value="SN"> Senegal</option>
+                                            <option value="RS"> Serbia</option>
+                                            <option value="SC"> Seychelles</option>
+                                            <option value="SL"> Sierra Leone</option>
+                                            <option value="SG"> Singapore</option>
+                                            <option value="SX"> Sint Maarten</option>
+                                            <option value="SK"> Slovakia</option>
+                                            <option value="SI"> Slovenia</option>
+                                            <option value="SB"> Solomon Islands</option>
+                                            <option value="SO"> Somalia</option>
+                                            <option value="ZA"> South Africa</option>
+                                            <option value="GS"> South Georgia and South Sandwich Islands</option>
+                                            <option value="KR"> South Korea</option>
+                                            <option value="SS"> South Sudan</option>
+                                            <option value="ES"> Spain</option>
+                                            <option value="LK"> Sri Lanka</option>
+                                            <option value="KN"> St Kitts and Nevis</option>
+                                            <option value="VC"> St Vincent and Grenadines</option>
+                                            <option value="SD"> Sudan</option>
+                                            <option value="SR"> Suriname</option>
+                                            <option value="SJ"> Svalbard and Jan Mayen</option>
+                                            <option value="SE"> Sweden</option>
+                                            <option value="CH"> Switzerland</option>
+                                            <option value="SY"> Syria</option>
+                                            <option value="ST"> São Tomé and Príncipe</option>
+                                            <option value="TW"> Taiwan</option>
+                                            <option value="TJ"> Tajikistan</option>
+                                            <option value="TZ"> Tanzania</option>
+                                            <option value="TH"> Thailand</option>
+                                            <option value="TL"> Timor-Leste</option>
+                                            <option value="TG"> Togo</option>
+                                            <option value="TK"> Tokelau</option>
+                                            <option value="TO"> Tonga</option>
+                                            <option value="TT"> Trinidad and Tobago</option>
+                                            <option value="TN"> Tunisia</option>
+                                            <option value="TR"> Turkey</option>
+                                            <option value="TM"> Turkmenistan</option>
+                                            <option value="TC"> Turks and Caicos Islands</option>
+                                            <option value="TV"> Tuvalu</option>
+                                            <option value="UM"> U.S. Minor Outlying Islands</option>
+                                            <option value="VI"> U.S. Virgin Islands</option>
+                                            <option value="UG"> Uganda</option>
+                                            <option value="UA"> Ukraine</option>
+                                            <option value="AE"> United Arab Emirates</option>
+                                            <option value="GB"> United Kingdom</option>
+                                            <option value="US"> United States</option>
+                                            <option value="UY"> Uruguay</option>
+                                            <option value="UZ"> Uzbekistan</option>
+                                            <option value="VU"> Vanuatu</option>
+                                            <option value="VA"> Vatican City</option>
+                                            <option value="VE"> Venezuela</option>
+                                            <option value="VN"> Vietnam</option>
+                                            <option value="WF"> Wallis and Futuna</option>
+                                            <option value="EH"> Western Sahara</option>
+                                            <option value="YE"> Yemen</option>
+                                            <option value="ZM"> Zambia</option>
+                                            <option value="ZW"> Zimbabwe</option>
+                                            <option value="AX"> Åland</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="warn_text" id="warning_personal_setting"></div>
@@ -390,6 +664,9 @@
                     </div>
                 </div>
                 <div class="sign_up_preferred_exercise" style="display: none;">
+                    <div class="goback" onclick="return gobackFun('.sign_up_personal_setting')">
+                        <img src="./images/goback.png" />
+                    </div>
                     <h2 class="form_big_title">SIGN UP</h2>
                     <p class="form_left_title">Let’s start your free 30 days! </p>
                     <div class="form_wrapper">
@@ -441,6 +718,9 @@
                     </div>
                 </div>
                 <div class="sign_up_done" style="display: none;">
+                    <div class="goback" onclick="return gobackFun('.sign_up_preferred_exercise')">
+                        <img src="./images/goback.png" />
+                    </div>
                     <h2 class="form_big_title">SIGN UP</h2>
                     <p class="form_left_title">Let’s start your free 30 days! </p>
                     <div class="form_wrapper">
@@ -454,15 +734,15 @@
                         <div class="sign_up_done_form">
                             <form method="POST" onsubmit="return checkDone(this)">
                                 <div class="human_wrapper">
-                                    <img src="./images/human.png" />
+                                    <img src="./images/human.png" class="HumanBodyMap" style="width: 30%;"/>
                                     <div class="complexion_box">
                                         <div class="complexion_box_column">
-                                            <button type="button" class="complexion_box_item">BACK</button>
-                                            <button type="button" class="complexion_box_item">ARM</button>
+                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('back')">BACK</button>
+                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('arm')">ARM</button>
                                         </div>
                                         <div class="complexion_box_column">
-                                            <button type="button" class="complexion_box_item">HIP</button>
-                                            <button type="button" class="complexion_box_item">WAIST</button>
+                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('hip')">HIP</button>
+                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('waist')">WAIST</button>
                                         </div>
                                     </div>
                                 </div>
@@ -486,57 +766,111 @@
                     </div>
                 </div>
                 <div class="choose_interest" style="display: none;">
-                    <h2 class="form_big_title">WELCOME TO JOIN US!</h2>
-                    <p class="form_left_title form_left_title_interest">Free Trial Begin Enjoy Your Journey with Us</p>
-                    <div class="form_wrapper form_wrapper_interest">
-                        <div class="form_tag"></div>
-                        <img class="icon_user" width=30px src="./images/Icon heart.png" />
-                        <div class="interest_slogan">Choose Physical Activity Fields You Are Interested In</div>
-                        <form method="POST" onsubmit="return checkInterest(this)">
-                            <div class="interest_wrapper">
-                                <div class="interest_wrapper_column">
-                                    <div class="interest_img_wrapper">
-                                        <img src="./images/Interested-Anaerobic.png" />
-                                        <label for="anaerobic"><input class="checkedTitle" type="checkbox" value="1"
-                                                checked="checked" name="anaerobic" id="anaerobic" /> Anaerobic
-                                            Action</label>
-
+                    <div class="loader">
+                        <div class="circleChangeButtonBox">
+                            <div class="circleChangeButton">
+                                <button onclick="displayInterest()">choose your interests</button>
+                            </div>
+                            <div class="inner-circle"></div>
+                            <div class="middle-circle"></div>
+                            <div class="outer-circle"></div>
+                        </div>
+                        <div class="horizontal">
+                            <div class="circlesup">
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                            </div>
+                            <div class="circlesdwn">
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                            </div>
+                        </div>
+                        <div class="vertical">
+                            <div class="circlesup">
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                            </div>
+                            <div class="circlesdwn">
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                                <div class="circleChange"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="interest_form_wrapper" style="display: none;">
+                        <h2 class="form_big_title">WELCOME TO JOIN US!</h2>
+                        <p class="form_left_title form_left_title_interest">Free Trial Begin Enjoy Your Journey with Us</p>
+                        <div class="form_wrapper form_wrapper_interest">
+                            <div class="form_tag"></div>
+                            <img class="icon_user" width=30px src="./images/Icon heart.png" />
+                            <div class="interest_slogan">Choose Physical Activity Fields You Are Interested In</div>
+                            <form method="POST" onsubmit="return checkInterest(this)">
+                                <div class="interest_wrapper">
+                                    <div class="interest_wrapper_column">
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-Anaerobic.png" width="76%"/>
+                                            <label for="anaerobic"><input class="checkedTitle" type="checkbox" value="1"
+                                                     name="anaerobic" id="anaerobic" /> Anaerobic
+                                                Action</label>
+    
+                                        </div>
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-weight.png" width="76%"/>
+                                            <label for="weight"><input class="checkedTitle" type="checkbox" value="2"
+                                                     name="weight" id="weight" /> Weight
+                                                Training</label>
+                                        </div>
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-yoga.png" width="76%"/>
+                                            <label for="yoga"><input class="checkedTitle" type="checkbox" value="3"
+                                                     name="yoga" id="yoga" /> Yoga</label>
+                                        </div>
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-ball.png" width="76%" />
+                                            <label for="ball"><input class="checkedTitle" type="checkbox" value="7"
+                                                     name="ball" id="ball" /> Elastic ball </label>
+                                        </div>
                                     </div>
-                                    <div class="interest_img_wrapper">
-                                        <img src="./images/Interested-weight.png" />
-                                        <label for="weight"><input class="checkedTitle" type="checkbox" value="2"
-                                                checked="checked" name="weight" id="weight" /> Weight
-                                            Training</label>
-                                    </div>
-                                    <div class="interest_img_wrapper">
-                                        <img src="./images/Interested-yoga.png" />
-                                        <label for="yoga"><input class="checkedTitle" type="checkbox" value="3"
-                                                checked="checked" name="yoga" id="yoga" /> Yoga</label>
+                                    <div class="interest_wrapper_column">
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-rope-sikp.png" width="76%" />
+                                            <label for="sikp"><input class="checkedTitle" type="checkbox" value="4"
+                                                     name="sikp" id="sikp" /> Rope Skipping</label>
+                                        </div>
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-run.png" width="76%" />
+                                            <label for="run"><input class="checkedTitle" type="checkbox" value="5"
+                                                     name="run" id="run" /> Runningn</label>
+                                        </div>
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-swim.png" width="76%" />
+                                            <label for="swim"><input class="checkedTitle" type="checkbox" value="6"
+                                                     name="swim" id="swim" /> Swimming</label>
+                                        </div>
+                                        <div class="interest_img_wrapper">
+                                            <img src="./images/Interested-qi.png" width="76%" />
+                                            <label for="swim"><input class="checkedTitle" type="checkbox" value="8"
+                                                     name="instrument" id="instrument" /> instrument</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="interest_wrapper_column">
-                                    <div class="interest_img_wrapper">
-                                        <img src="./images/Interested-rope-sikp.png" />
-                                        <label for="sikp"><input class="checkedTitle" type="checkbox" value="4"
-                                                checked="checked" name="sikp" id="sikp" /> Rope Skipping</label>
-                                    </div>
-                                    <div class="interest_img_wrapper">
-                                        <img src="./images/Interested-run.png" />
-                                        <label for="run"><input class="checkedTitle" type="checkbox" value="5"
-                                                checked="checked" name="run" id="run" /> Runningn</label>
-                                    </div>
-                                    <div class="interest_img_wrapper">
-                                        <img src="./images/Interested-swim.png" />
-                                        <label for="swim"><input class="checkedTitle" type="checkbox" value="6"
-                                                checked="checked" name="swim" id="swim" /> Swimming</label>
-                                    </div>
+                                <div style="text-align: center;">
+                                    <input class="submit_button" style="width: 360px;" type="submit"
+                                        value="Start Your Trip On Personal Training" />
                                 </div>
-                            </div>
-                            <div style="text-align: center;">
-                                <input class="submit_button" style="width: 360px;" type="submit"
-                                    value="Start Your Trip On Personal Training" />
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -555,6 +889,12 @@
     <script>
         laydate.render({
             elem: '#expirationDate', //指定元素
+            lang: 'en',
+            theme: '#c8a985',
+            type: 'month'
+        });
+        laydate.render({
+            elem: '#birthday', //指定元素
             lang: 'en',
             theme: '#c8a985'
         });

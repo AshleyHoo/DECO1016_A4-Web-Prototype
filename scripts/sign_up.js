@@ -1,3 +1,27 @@
+function gobackFun(router){
+  switch(router){
+    case "#/":
+        console.log(router)
+        location.hash = "#/";
+        return false
+      break;
+    case "#/SIGN_IN_UP":
+        console.log(router)
+        location.hash = "#/SIGN_IN_UP";
+        return false
+      break;
+    default:
+        console.log(router)
+        location.hash = "#/SIGN_UP";
+        changeSignUpPages(router)
+        return false
+        break;
+  }
+
+  location.hash = "#/"
+}
+
+
 function clickSignIn() {
   location.hash = "#/SIGN_IN_INDEX";
 }
@@ -5,22 +29,22 @@ function clickSignUp() {
   location.hash = "#/SIGN_UP_INDEX";
 }
 
-function changeCurrentCustomer(){
+function changeCurrentCustomer() {
   location.hash = "#/SIGN_UP_INDEX";
 }
-function changeNewCustomer(){
+function changeNewCustomer() {
   location.hash = "#/SIGN_IN_INDEX";
 }
 
-function backToTop(){
+function backToTop() {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
 function checkSigUp(object) {
   //test
-  // location.hash = "#/SIGN_UP";
-  // changeSignUpPages(".sign_up_billing_detial");
-  // return false;
+  location.hash = "#/SIGN_UP";
+  changeSignUpPages(".sign_up_billing_detial");
+  return false;
 
   let warning = document.getElementById("warning_sign_up");
   let name = object.name;
@@ -49,9 +73,9 @@ function checkSigUp(object) {
 }
 
 function checkBillingDetail(object) {
-  // location.hash = "#/SIGN_UP";
-  // changeSignUpPages(".sign_up_personal_setting");
-  // return false;
+  location.hash = "#/SIGN_UP";
+  changeSignUpPages(".sign_up_personal_setting");
+  return false;
 
   let warning = document.getElementById("warning_billing_detail");
   let firstName = object.firstName;
@@ -59,6 +83,7 @@ function checkBillingDetail(object) {
   let cardNumber = object.cardNumber;
   let securityCode = object.securityCode;
   let expirationDate = object.expirationDate;
+  let birthday = object.birthday;
 
   if (!checkName(firstName)) {
     warning.innerHTML = "First name can not be empty";
@@ -79,6 +104,10 @@ function checkBillingDetail(object) {
     warning.innerHTML = "Expiration date can not be empty";
     return false;
   }
+  if (!checkName(expirationDate)) {
+    warning.innerHTML = "birthday can not be empty";
+    return false;
+  }
   warning.innerHTML = "";
   location.hash = "#/SIGN_UP";
   changeSignUpPages(".sign_up_personal_setting");
@@ -86,9 +115,9 @@ function checkBillingDetail(object) {
 }
 
 function checkPersonalSetting(object) {
-    // location.hash = "#/SIGN_UP";
-    // changeSignUpPages(".sign_up_preferred_exercise");
-    // return false;
+  location.hash = "#/SIGN_UP";
+  changeSignUpPages(".sign_up_preferred_exercise");
+  return false;
 
   let warning = document.getElementById("warning_personal_setting");
   let street = object.street;
@@ -131,12 +160,59 @@ function checkPreferredExercise(object) {
 function checkDone(object) {
   location.hash = "#/SIGN_UP";
   changeSignUpPages(".choose_interest");
+
+  let circle = document.querySelectorAll(".circleChange");
+  circle.forEach(item => {
+    item.style.animationName = "orbit";
+    item.style.animationDuration = "3s";
+    item.style.animationIterationCount = "infinite";
+  });
+  // setTimeout(() => {
+  //   let imgCircle = document.querySelectorAll(".circleChange");
+  //   imgCircle.forEach(item => {
+  //     item.style.display = "none";
+  //   });
+  // }, 2000);
+
   return false;
 }
 
+function displayInterest(){
+  let circle = document.querySelector(".loader");
+  circle.style.display = "none"
+  let interestForm = document.querySelector(".interest_form_wrapper");
+  interestForm.style.display = "block"
+}
+
 function checkInterest(object) {
+  let circle = document.querySelector(".loader");
+  circle.style.display = "block"
+  let interestForm = document.querySelector(".interest_form_wrapper");
+  interestForm.style.display = "none"
+
   location.hash = "#/";
   return false;
+}
+
+function changeHumanBodyMap(bodyParts) {
+  let bodyPartsImg = document.querySelector(".HumanBodyMap");
+  switch (bodyParts) {
+    case "back":
+      bodyPartsImg.src = "./images/back.png";
+      break;
+    case "arm":
+      bodyPartsImg.src = "./images/arm.png";
+      break;
+    case "hip":
+      bodyPartsImg.src = "./images/hip.png";
+      break;
+    case "waist":
+      bodyPartsImg.src = "./images/waist.png";
+      break;
+    default:
+      bodyPartsImg.src = "./images/human.png";
+      break;
+  }
 }
 
 //check name
@@ -189,7 +265,7 @@ function checkEmail(email, warning) {
 }
 
 function checkPostalCode(postalcode, warning) {
-  var reg = /^[0-9]{6}$/;
+  let reg = /^[0-9]{4,6}$/;
   if (reg.test(postalcode)) {
     return true;
   } else if (postalcode == "" || postalcode.length == 0) {
@@ -219,6 +295,18 @@ function changeSignUpPages(changePage) {
  * @returns
  */
 function checkCreditCard(bankno, warning) {
+  //only check bankno length
+  let reg = /^[0-9]{16,19}$/;
+  if (reg.test(bankno)) {
+    return true;
+  } else if (bankno == "" || bankno.length == 0) {
+    warning.innerHTML = "Please fill in the bank card number";
+    return false;
+  } else {
+    warning.innerHTML = "Wrong bank card number length";
+    return false;
+  }
+  // use luhn check algorithm
   var bankno = bankno.replace(/\s/g, "");
   if (bankno == "") {
     warning.innerHTML = "Please fill in the bank card number";

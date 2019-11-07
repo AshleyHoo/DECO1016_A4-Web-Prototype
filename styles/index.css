@@ -224,11 +224,11 @@ footer div {
   flex: 1;
 }
 .img_block p:first-of-type {
-  font-size: 25px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 .img_block p:last-of-type {
-  /* font-size: 20px; */
+  font-size: 0.9em;
 }
 
 .form_under_little_title {
