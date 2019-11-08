@@ -42,9 +42,9 @@ function backToTop() {
 
 function checkSigUp(object) {
   //test
-  location.hash = "#/SIGN_UP";
-  changeSignUpPages(".sign_up_billing_detial");
-  return false;
+  // location.hash = "#/SIGN_UP";
+  // changeSignUpPages(".sign_up_billing_detial");
+  // return false;
 
   let warning = document.getElementById("warning_sign_up");
   let name = object.name;
@@ -73,9 +73,9 @@ function checkSigUp(object) {
 }
 
 function checkBillingDetail(object) {
-  location.hash = "#/SIGN_UP";
-  changeSignUpPages(".sign_up_personal_setting");
-  return false;
+  // location.hash = "#/SIGN_UP";
+  // changeSignUpPages(".sign_up_personal_setting");
+  // return false;
 
   let warning = document.getElementById("warning_billing_detail");
   let firstName = object.firstName;
@@ -115,9 +115,9 @@ function checkBillingDetail(object) {
 }
 
 function checkPersonalSetting(object) {
-  location.hash = "#/SIGN_UP";
-  changeSignUpPages(".sign_up_preferred_exercise");
-  return false;
+  // location.hash = "#/SIGN_UP";
+  // changeSignUpPages(".sign_up_preferred_exercise");
+  // return false;
 
   let warning = document.getElementById("warning_personal_setting");
   let street = object.street;
