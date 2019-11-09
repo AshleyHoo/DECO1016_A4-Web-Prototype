@@ -348,6 +348,7 @@ footer div {
     display: flex;
     align-items: center;
     color: #999999;
+    margin: 16px 0;
   }
   
   .goal_bg {
@@ -361,6 +362,7 @@ footer div {
     display: flex;
     justify-content: space-between;
     width: 90%;
+    margin: 16px 0;
   }
 
   

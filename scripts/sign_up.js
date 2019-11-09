@@ -17,8 +17,6 @@ function gobackFun(router){
         return false
         break;
   }
-
-  location.hash = "#/"
 }
 
 
@@ -213,6 +211,21 @@ function changeHumanBodyMap(bodyParts) {
       bodyPartsImg.src = "./images/human.png";
       break;
   }
+}
+
+function heightChange(value){
+  document.getElementById("height").innerHTML = value
+}
+function currentWeightChange(value){
+  document.getElementById("weight").innerHTML = value
+  let currentWeight = value
+  let goalWeight =  document.getElementById("goal_weight_select").value
+  document.getElementById("lose_weight").innerHTML = Number(currentWeight) - Number(goalWeight)
+}
+function goalWeightChange(value){
+  let currentWeight = document.getElementById("current_weight_select").value
+  let goalWeight =  value
+  document.getElementById("lose_weight").innerHTML = Number(currentWeight) - Number(goalWeight)
 }
 
 //check name
