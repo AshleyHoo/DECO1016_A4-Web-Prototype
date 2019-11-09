@@ -14,7 +14,7 @@
 
 <body>
     <header style="display: none;">
-        <div class="mobile_screen"><img src='./images/Icon open.png' /></div>
+        <div class="mobile_screen"><img src='./images/Icon open.png' onclick="return gobackFun('#/')" /></div>
         <div class="mobile_screen"><img src='./images/Icon search.png' /></div>
         <div class="mobile_screen header_logo" style="visibility: hidden;">
             <img src='./images/logo.png' />
@@ -26,8 +26,8 @@
         <div class="pc_search"><img src='./images/Icon search.png' /></div>
         <div><img src='./images/Icon heart.png' /></div>
     </header>
-    <!-- Left navigation bar -->
     <div class="content_wrapper">
+        <!-- Left navigation bar -->
         <section class="section_left">
             <div class="index_logo" onclick="return gobackFun('#/')">
                 <img src='./images/logo.png' />
@@ -160,6 +160,7 @@
             <div class="reward_history" style="display: none;">Reward History</div>
             <div class="community" style="display: none;">Community</div>
             <div class="contact" style="display: none;">Contact</div>
+            <!-- sign in or sign up -->
             <div class="sign_in_sign_up" style="display: none;">
                 <div class="goback" onclick="return gobackFun('#/')">
                     <img src="./images/goback.png" />
@@ -171,7 +172,6 @@
                             <p class="form_little_title">CURRENT CUSTOMER</p>
                             <button class="current_customer_button" onclick="return changeCurrentCustomer()"><img
                                     src="./images/Icon arrow down.png" /> </button>
-                            <!-- <form onsubmit="return checkSignIn(this)"> -->
                             <form action="#/" method="post" onsubmit="return checkSignIn(this)">
                                 <p class="require_text">Required Field * </p>
                                 <input class="input_underline" type="text" name="email" placeholder="EMAIL ADDRESS*" />
@@ -252,6 +252,7 @@
                 </div>
             </div>
             <div class="sign_up" style="display: none;">
+                <!-- sign_up_billing_detial -->
                 <div class="sign_up_billing_detial" style="display: none;">
                     <div class="goback" onclick="return gobackFun('#/SIGN_IN_UP')">
                         <img src="./images/goback.png" />
@@ -280,16 +281,6 @@
                                         <label class="input_title" for="lastName">LAST NAME*</label>
                                         <input class="input_box" style="width: 200px;" type="text" name="lastName"
                                             id="lastName" placeholder="Must match your card" />
-                                    </div>
-                                </div>
-                                <div class="input_box_wrapper">
-                                    <div>
-                                        <label class="input_title" for="expirationDate">Date of Birth*</label>
-                                        <div class="input_img_position" style="width: 200px;">
-                                            <input class="input_box" style="width: 200px;" type="text"
-                                                class="datepicker" name="birthday" id="birthday" />
-                                            <!-- <img class="input_img" src="./images/date.png" /> -->
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="input_box_wrapper input_box_wrapper_inline">
@@ -347,6 +338,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- sign_up_personal_setting -->
                 <div class="sign_up_personal_setting" style="display: none;">
                     <div class="goback" onclick="return gobackFun('.sign_up_billing_detial')">
                         <img src="./images/goback.png" />
@@ -389,7 +381,7 @@
                                 <div class="input_box_wrapper">
                                     <label class="input_title" for="country">Country*</label>
                                     <div class="input_img_position" style="width: 160px;">
-                                        <select class="input_box" name="country" id="country"  style="width:200px;">
+                                        <select class="input_box" name="country" id="country" style="width:200px;">
                                         </select>
                                     </div>
                                 </div>
@@ -413,6 +405,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- sign_up_preferred_exercise -->
                 <div class="sign_up_preferred_exercise" style="display: none;">
                     <div class="goback" onclick="return gobackFun('.sign_up_personal_setting')">
                         <img src="./images/goback.png" />
@@ -430,6 +423,11 @@
                         <div class="sign_up_preferred_exercise_form">
                             <form method="POST" onsubmit="return checkPreferredExercise(this)">
                                 <div class="height_weight_wrapper">
+                                    <label class="input_title" for="expirationDate">Date of Birth* &nbsp</label>
+                                    <input class="input_box" style="width: 200px;" type="text" class="datepicker"
+                                        name="birthday" id="birthday" />
+                                </div>
+                                <div class="height_weight_wrapper">
                                     <span>Your Height:&nbsp</span>
                                     <select class="input_box" id="height_select" onchange="heightChange(this.value)">
                                     </select>
@@ -437,17 +435,20 @@
                                 <div class="current_goal_weight">
                                     <div class="height_weight_wrapper">
                                         <span>Your Current weight:&nbsp</span>
-                                        <select class="input_box" id="current_weight_select" onchange="currentWeightChange(this.value)">
+                                        <select class="input_box" id="current_weight_select"
+                                            onchange="currentWeightChange(this.value)">
                                         </select>
                                     </div>
                                     <div class="height_weight_wrapper">
                                         <span>Goal Weight:&nbsp</span>
-                                        <select class="input_box" id="goal_weight_select" onchange="goalWeightChange(this.value)">
+                                        <select class="input_box" id="goal_weight_select"
+                                            onchange="goalWeightChange(this.value)">
                                         </select>
                                     </div>
                                 </div>
                                 <div class="height_weight_wrapper">
-                                    <div class="goal_bg" style="width: 150px;"><span id="height">167</span>cm / <span id="weight">58</span>kg</div>
+                                    <div class="goal_bg" style="width: 150px;"><span id="height">167</span>cm / <span
+                                            id="weight">58</span>kg</div>
                                     <div>need to lose:</div>
                                     <div class="goal_bg" style="width: 100px;"><span id="lose_weight">8</span> kg</div>
                                 </div>
@@ -470,6 +471,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- sign_up_done -->
                 <div class="sign_up_done" style="display: none;">
                     <div class="goback" onclick="return gobackFun('.sign_up_preferred_exercise')">
                         <img src="./images/goback.png" />
@@ -487,15 +489,19 @@
                         <div class="sign_up_done_form">
                             <form method="POST" onsubmit="return checkDone(this)">
                                 <div class="human_wrapper">
-                                    <img src="./images/human.png" class="HumanBodyMap" style="width: 30%;"/>
+                                    <img src="./images/human.png" class="HumanBodyMap" style="width: 30%;" />
                                     <div class="complexion_box">
                                         <div class="complexion_box_column">
-                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('back')">BACK</button>
-                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('arm')">ARM</button>
+                                            <button type="button" class="complexion_box_item"
+                                                onclick="return changeHumanBodyMap('back')">BACK</button>
+                                            <button type="button" class="complexion_box_item"
+                                                onclick="return changeHumanBodyMap('arm')">ARM</button>
                                         </div>
                                         <div class="complexion_box_column">
-                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('hip')">HIP</button>
-                                            <button type="button" class="complexion_box_item" onclick="return changeHumanBodyMap('waist')">WAIST</button>
+                                            <button type="button" class="complexion_box_item"
+                                                onclick="return changeHumanBodyMap('hip')">HIP</button>
+                                            <button type="button" class="complexion_box_item"
+                                                onclick="return changeHumanBodyMap('waist')">WAIST</button>
                                         </div>
                                     </div>
                                 </div>
@@ -518,6 +524,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- choose_interest -->
                 <div class="choose_interest" style="display: none;">
                     <div class="loader">
                         <div class="circleChangeButtonBox">
@@ -561,9 +568,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="interest_form_wrapper" style="display: none;">
+                    <div class="interest_form_wrapper" style="visibility: hidden;">
                         <h2 class="form_big_title">WELCOME TO JOIN US!</h2>
-                        <p class="form_left_title form_left_title_interest">Free Trial Begin Enjoy Your Journey with Us</p>
+                        <p class="form_left_title form_left_title_interest">Free Trial Begin Enjoy Your Journey with Us
+                        </p>
                         <div class="form_wrapper form_wrapper_interest">
                             <div class="form_tag"></div>
                             <img class="icon_user" width=30px src="./images/Icon heart.png" />
@@ -572,49 +580,49 @@
                                 <div class="interest_wrapper">
                                     <div class="interest_wrapper_column">
                                         <div class="interest_img_wrapper">
-                                            <img src="./images/Interested-Anaerobic.png" width="76%"/>
+                                            <img src="./images/Interested-Anaerobic.png" width="76%" />
                                             <label for="anaerobic"><input class="checkedTitle" type="checkbox" value="1"
-                                                     name="anaerobic" id="anaerobic" /> Anaerobic
+                                                    name="anaerobic" id="anaerobic" /> Anaerobic
                                                 Action</label>
-    
+
                                         </div>
                                         <div class="interest_img_wrapper">
-                                            <img src="./images/Interested-weight.png" width="76%"/>
+                                            <img src="./images/Interested-weight.png" width="76%" />
                                             <label for="weight"><input class="checkedTitle" type="checkbox" value="2"
-                                                     name="weight" id="weight" /> Weight
+                                                    name="weight" id="weight" /> Weight
                                                 Training</label>
                                         </div>
                                         <div class="interest_img_wrapper">
-                                            <img src="./images/Interested-yoga.png" width="76%"/>
+                                            <img src="./images/Interested-yoga.png" width="76%" />
                                             <label for="yoga"><input class="checkedTitle" type="checkbox" value="3"
-                                                     name="yoga" id="yoga" /> Yoga</label>
+                                                    name="yoga" id="yoga" /> Yoga</label>
                                         </div>
                                         <div class="interest_img_wrapper">
                                             <img src="./images/Interested-ball.png" width="76%" />
                                             <label for="ball"><input class="checkedTitle" type="checkbox" value="7"
-                                                     name="ball" id="ball" /> Elastic ball </label>
+                                                    name="ball" id="ball" /> Elastic ball </label>
                                         </div>
                                     </div>
                                     <div class="interest_wrapper_column">
                                         <div class="interest_img_wrapper">
                                             <img src="./images/Interested-rope-sikp.png" width="76%" />
                                             <label for="sikp"><input class="checkedTitle" type="checkbox" value="4"
-                                                     name="sikp" id="sikp" /> Rope Skipping</label>
+                                                    name="sikp" id="sikp" /> Rope Skipping</label>
                                         </div>
                                         <div class="interest_img_wrapper">
                                             <img src="./images/Interested-run.png" width="76%" />
                                             <label for="run"><input class="checkedTitle" type="checkbox" value="5"
-                                                     name="run" id="run" /> Runningn</label>
+                                                    name="run" id="run" /> Runningn</label>
                                         </div>
                                         <div class="interest_img_wrapper">
                                             <img src="./images/Interested-swim.png" width="76%" />
                                             <label for="swim"><input class="checkedTitle" type="checkbox" value="6"
-                                                     name="swim" id="swim" /> Swimming</label>
+                                                    name="swim" id="swim" /> Swimming</label>
                                         </div>
                                         <div class="interest_img_wrapper">
                                             <img src="./images/Interested-qi.png" width="76%" />
                                             <label for="swim"><input class="checkedTitle" type="checkbox" value="8"
-                                                     name="instrument" id="instrument" /> instrument</label>
+                                                    name="instrument" id="instrument" /> instrument</label>
                                         </div>
                                     </div>
                                 </div>
@@ -630,6 +638,7 @@
 
         </sidebar>
     </div>
+    <!-- footer -->
     <footer class="footer_text" style="display: none;">
         <div>FAQS</div>
         <div>PRIVACY POLICY</div>

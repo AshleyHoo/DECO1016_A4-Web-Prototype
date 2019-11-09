@@ -42,6 +42,7 @@ MyRouter.map("/", function() {
   }
 });
 
+//mobile router
 MyRouter.map("/SIGN_IN_INDEX", function() {
   if (document.body.clientWidth > 960) {
     location.hash = "#/SIGN_IN_UP";
@@ -66,7 +67,7 @@ MyRouter.map("/SIGN_IN_INDEX", function() {
     formTitle.style.visibility = "hidden";
   }
 });
-
+//mobile router
 MyRouter.map("/SIGN_UP_INDEX", function() {
   if (document.body.clientWidth > 960) {
     location.hash = "#/SIGN_IN_UP";

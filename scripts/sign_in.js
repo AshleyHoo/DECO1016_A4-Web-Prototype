@@ -13,7 +13,7 @@ function checkSignIn(object) {
   }
 }
 
-//第一次检查密码
+//Check password for the first time
 function checkPassword(password, warning) {
   let pattner = "/^[w_-]{6,16}$/";
   if (password.value == "" || password.value == null) {

@@ -1,3 +1,4 @@
+//return to previous step
 function gobackFun(router){
   switch(router){
     case "#/":
@@ -19,7 +20,7 @@ function gobackFun(router){
   }
 }
 
-
+//change router
 function clickSignIn() {
   location.hash = "#/SIGN_IN_INDEX";
 }
@@ -38,6 +39,7 @@ function backToTop() {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
+//Form validation in creat user
 function checkSigUp(object) {
   //test
   // location.hash = "#/SIGN_UP";
@@ -70,6 +72,7 @@ function checkSigUp(object) {
   return false;
 }
 
+//Form validation bill card
 function checkBillingDetail(object) {
   // location.hash = "#/SIGN_UP";
   // changeSignUpPages(".sign_up_personal_setting");
@@ -112,6 +115,7 @@ function checkBillingDetail(object) {
   return false;
 }
 
+//Form validation personal setting
 function checkPersonalSetting(object) {
   // location.hash = "#/SIGN_UP";
   // changeSignUpPages(".sign_up_preferred_exercise");
@@ -149,12 +153,14 @@ function checkPersonalSetting(object) {
   return false;
 }
 
+// Form validation prefer exercise
 function checkPreferredExercise(object) {
   location.hash = "#/SIGN_UP";
   changeSignUpPages(".sign_up_done");
   return false;
 }
 
+// Form validation done
 function checkDone(object) {
   location.hash = "#/SIGN_UP";
   changeSignUpPages(".choose_interest");
@@ -175,23 +181,26 @@ function checkDone(object) {
   return false;
 }
 
+// Animated transitions
 function displayInterest(){
   let circle = document.querySelector(".loader");
   circle.style.display = "none"
   let interestForm = document.querySelector(".interest_form_wrapper");
-  interestForm.style.display = "block"
+  interestForm.style.visibility = "visible"
 }
 
+// Animated transitions
 function checkInterest(object) {
   let circle = document.querySelector(".loader");
   circle.style.display = "block"
   let interestForm = document.querySelector(".interest_form_wrapper");
-  interestForm.style.display = "none"
+  interestForm.style.visibility = "hidden"
 
   location.hash = "#/";
   return false;
 }
 
+//change img src in prefer exercise
 function changeHumanBodyMap(bodyParts) {
   let bodyPartsImg = document.querySelector(".HumanBodyMap");
   switch (bodyParts) {
@@ -213,6 +222,7 @@ function changeHumanBodyMap(bodyParts) {
   }
 }
 
+// According to the height and weight automatically calculate the need to lose value
 function heightChange(value){
   document.getElementById("height").innerHTML = value
 }
@@ -228,7 +238,7 @@ function goalWeightChange(value){
   document.getElementById("lose_weight").innerHTML = Number(currentWeight) - Number(goalWeight)
 }
 
-//check name
+//check name function
 function checkName(name) {
   if (name.value == "" || name.value == "null") {
     return false;
@@ -236,7 +246,7 @@ function checkName(name) {
     return true;
   }
 }
-//Check password for the first time
+//Check password for the first time function
 function checkPassword(password, warning) {
   let pattner = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
   if (password.value == "" || password.value == null) {
@@ -251,7 +261,7 @@ function checkPassword(password, warning) {
   }
   return true;
 }
-//Second check password
+//Second check password function
 function checkRePassword(rePassword, password, warning) {
   //   let pattner = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
   if (rePassword.value == "" || rePassword.value == null) {
@@ -265,6 +275,7 @@ function checkRePassword(rePassword, password, warning) {
   return true;
 }
 
+// email check function
 function checkEmail(email, warning) {
   let pattner = /^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/;
   if (email.value == "" || email.value == "null") {
@@ -277,6 +288,7 @@ function checkEmail(email, warning) {
   }
 }
 
+// postalCode function
 function checkPostalCode(postalcode, warning) {
   let reg = /^[0-9]{4,6}$/;
   if (reg.test(postalcode)) {
@@ -290,9 +302,8 @@ function checkPostalCode(postalcode, warning) {
   }
 }
 
+// router change
 let signUpPages = document.querySelectorAll(".sign_up>div");
-console.log(signUpPages);
-
 function changeSignUpPages(changePage) {
   signUpPages.forEach(item => {
     item.style.display = "none";
