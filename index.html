@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WEB PROTOTYPE</title>
+    <!-- import css -->
     <link rel="stylesheet" href="./styles/index.css" type="text/css">
     <link rel="stylesheet" href="./styles/destop.css" type="text/css">
     <link rel="stylesheet" href="./styles/mobile.css" type="text/css">
@@ -112,10 +113,8 @@
                             <div class="index_page_right_img_first img_block">
                                 <p>FREE TRIAL</p>
                                 <p>Every new customer will get the 30 days trial for the personal training program to
-                                    enjoy our
-                                    professional service.After that you will need to spend only 17$ per month to enjoy
-                                    our
-                                    program.
+                                    enjoy our professional service. After that you will need to spend only <strong>17$</strong> per month
+                                    to enjoy our program.
                                 </p>
                             </div>
                             <img src="./images/index-chart.png" />
@@ -124,8 +123,7 @@
                             <div class="index_page_right_img_second img_block">
                                 <p>CUSTOMIZED SERVICE</p>
                                 <p>We will provide the peraonal training program which is customized for you denpend on
-                                    your
-                                    physical condition</p>
+                                    your physical condition.</p>
                             </div>
                             <img src="./images/index-train.png" />
                         </div>
@@ -133,7 +131,7 @@
                             <div class="index_page_right_img_third img_block">
                                 <p>FREE TRIAL</p>
                                 <p>You can redeeem High-quality course for diverse sports fields by your cumulative
-                                    exercise time</p>
+                                    exercise time.</p>
                             </div>
                             <img src="./images/index-gift.png" />
                         </div>
@@ -644,19 +642,21 @@
         <div>PRIVACY POLICY</div>
         <div>TERMS & CONDITIONS</div>
     </footer>
+    <!-- import js -->
     <script type="text/javascript" src="./scripts/router.js"></script>
     <script type="text/javascript" src="./scripts/sign_in.js"></script>
     <script type="text/javascript" src="./scripts/sign_up.js"></script>
     <script type="text/javascript" src="./scripts/laydate/laydate.js"></script>
     <script>
+        //Date selector
         laydate.render({
-            elem: '#expirationDate', //指定元素
+            elem: '#expirationDate', //Specified element
             lang: 'en',
             theme: '#c8a985',
             type: 'month'
         });
         laydate.render({
-            elem: '#birthday', //指定元素
+            elem: '#birthday', //Specified element
             lang: 'en',
             theme: '#c8a985'
         });
